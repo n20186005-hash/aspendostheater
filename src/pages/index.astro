@@ -1,0 +1,367 @@
+---
+import '../styles/global.css';
+
+const siteName = 'Aspendos Antik Tiyatrosu';
+const title = 'Aspendos Antik Tiyatrosu | Roma Mimarisi, Ziyaret ve Ulaşım Rehberi';
+const description = 'Antalya Serik’teki Aspendos Antik Tiyatrosu için tarih, mimari, güncel ziyaret saatleri, bilet, ulaşım, otopark, gezi rotası ve yakın çevre rehberi.';
+const configuredSite = Astro.site;
+const canonicalURL = configuredSite ? new URL(Astro.url.pathname, configuredSite).toString() : undefined;
+const ogImage = configuredSite ? new URL('/social-card.svg', configuredSite).toString() : undefined;
+
+const photos = {
+  hero: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Aspendos_Amphitheatre.jpg/1280px-Aspendos_Amphitheatre.jpg',
+  interior: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Roman_theater_in_Aspendos.jpg/1280px-Roman_theater_in_Aspendos.jpg',
+  detail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Aspendos_Theatre_Exterior_detail_of_front_side_4602.jpg/1280px-Aspendos_Theatre_Exterior_detail_of_front_side_4602.jpg',
+  stage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Aspendos_Theatre_Scaenae_frons_whole_breadth_4777.jpg/1280px-Aspendos_Theatre_Scaenae_frons_whole_breadth_4777.jpg',
+  aqueduct: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Aspendos_Aqueduct_3313.jpg/1280px-Aspendos_Aqueduct_3313.jpg',
+};
+
+const imageUrls = configuredSite
+  ? ['/social-card.svg'].map((path) => new URL(path, configuredSite).toString())
+  : undefined;
+
+const attractionJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['TouristAttraction', 'LocalBusiness'],
+  name: 'Aspendos Antik Tiyatrosu',
+  alternateName: 'Aspendos Theatre',
+  ...(canonicalURL ? { url: canonicalURL } : {}),
+  ...(imageUrls ? { image: imageUrls } : {}),
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Belkıs, Aspendos Yolu',
+    postalCode: '07500',
+    addressLocality: 'Serik',
+    addressRegion: 'Antalya',
+    addressCountry: 'TR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.9377301,
+    longitude: 31.1674266,
+  },
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    opens: '08:00',
+    closes: '18:45',
+  }],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 4.8,
+    reviewCount: 22619,
+    bestRating: 5,
+  },
+  priceRange: '€15',
+  publicAccess: true,
+};
+
+const faq = [
+  {
+    q: 'Aspendos Antik Tiyatrosu hangi saatlerde açık?',
+    a: 'Kültür ve Turizm Bakanlığı Müze sayfasında gündüz ziyareti için 08.00–18.45 saatleri listeleniyor. Saatler sezon, özel etkinlik veya bakım nedeniyle değişebileceğinden yola çıkmadan önce resmî Müze sayfasını kontrol etmek en güvenlisidir.'
+  },
+  {
+    q: 'Aspendos Antik Tiyatrosu giriş ücreti ne kadar?',
+    a: 'Resmî 2026 yabancı ziyaretçi ücret tarifesinde Aspendos Örenyeri için 15 € listeleniyor. Türkiye Cumhuriyeti vatandaşları için MüzeKart geçerlidir; dönemsel uygulamalar değişebilir.'
+  },
+  {
+    q: 'Aspendos’u gezmek için ne kadar zaman ayırmalı?',
+    a: 'Sadece tiyatro için yaklaşık 45–60 dakika; tiyatroya ek olarak akropol, bazilika, agora ve su kemeri kalıntılarını görmek için yaklaşık 1,5–2,5 saat ayırmak daha rahattır.'
+  },
+  {
+    q: 'Aspendos’a Antalya’dan nasıl gidilir?',
+    a: 'En rahat seçenek D400 üzerinden özel araç veya taksidir. Toplu taşımada Antalya’dan Serik’e ulaşıp son bölüm için yerel minibüs ya da taksi kullanmak pratik bir çözümdür.'
+  },
+  {
+    q: 'Tiyatro hâlâ etkinliklerde kullanılıyor mu?',
+    a: 'Evet. Yapı günümüzde de kontrollü kültür ve sahne etkinliklerine ev sahipliği yapabiliyor. Etkinlik günlerinde ziyaret düzeni değişebileceği için programı önceden kontrol edin.'
+  },
+  {
+    q: 'Aspendos UNESCO Dünya Mirası mı?',
+    a: 'Aspendos Tiyatrosu ve Su Kemerleri Türkiye’nin UNESCO Dünya Mirası Geçici Listesi’ndedir. Bu statü, alanın henüz Dünya Mirası Listesi’ne kesin olarak kaydedildiği anlamına gelmez.'
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068477483!2d31.16742658763456!3d36.93773012331794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c49e7638f76edd%3A0x82aaad9ddfd636b6!2sAspendos%20Theatre!5e1!3m2!1str!2str!4v1788741225599!5m2!1str!2str';
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#9f4d31" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script type="application/ld+json" set:html={JSON.stringify(attractionJsonLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
+    </script>
+  </head>
+  <body>
+    <header class="absolute inset-x-0 top-0 z-30 border-b border-white/15 text-white">
+      <div class="shell flex h-20 items-center justify-between gap-6">
+        <a href="#top" aria-label="Aspendos ana sayfa" class="flex items-center gap-3 no-underline">
+          <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 52V29C10 17 20 8 32 8s22 9 22 21v23"/><path d="M17 52V32c0-8 7-15 15-15s15 7 15 15v20" opacity=".72"/><path d="M17 52c5-8 25-8 30 0M21 43c5-6 17-6 22 0M10 52h44"/>
+            </g>
+          </svg>
+          <span><b class="display block text-lg leading-none">Aspendos</b><span class="mt-1 block text-[10px] font-bold tracking-[.23em]">ANTİK TİYATROSU</span></span>
+        </a>
+        <nav aria-label="Ana menü" class="hidden items-center gap-7 text-sm font-semibold md:flex">
+          <a href="#hikaye" class="no-underline hover:opacity-70">Tarih</a>
+          <a href="#ziyaret" class="no-underline hover:opacity-70">Ziyaret</a>
+          <a href="#ulasim" class="no-underline hover:opacity-70">Ulaşım</a>
+          <a href="#rota" class="no-underline hover:opacity-70">Rota</a>
+          <a href="#sss" class="no-underline hover:opacity-70">SSS</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-mask min-h-[760px] bg-[#1a1815]">
+        <img src={photos.hero} alt="Aspendos Antik Tiyatrosu’nun yüksekten görülen yarım daire caveası ve sahne binası" class="hero-image h-[94vh] max-h-[980px] w-full" fetchpriority="high" referrerpolicy="no-referrer" />
+        <div class="hero-copy">
+          <div class="mb-5 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[.18em] text-white/75">
+            <span>Serik · Antalya</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>Roma Dönemi</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>UNESCO Geçici Liste</span>
+          </div>
+          <h1 class="display max-w-5xl text-[clamp(4rem,10vw,9.3rem)] leading-[.79]">Taşın içindeki <em class="font-normal text-[#dfb68c]">ses.</em></h1>
+          <div class="mt-8 grid max-w-4xl gap-5 border-t border-white/25 pt-6 md:grid-cols-[1.45fr_.55fr]">
+            <p class="max-w-2xl text-base leading-7 text-white/80 md:text-lg">Marcus Aurelius döneminden bugüne ayakta kalan, iki katlı sahne binası ve güçlü akustiğiyle Akdeniz dünyasının en etkileyici Roma tiyatrolarından biri.</p>
+            <div class="flex items-end md:justify-end"><a href="#ziyaret" class="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-bold no-underline backdrop-blur hover:bg-white hover:text-black">Ziyareti planla ↓</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-[var(--line)] py-7">
+        <div class="shell grid gap-5 text-sm sm:grid-cols-2 lg:grid-cols-4">
+          <div><span class="eyebrow">Gündüz saatleri</span><strong class="mt-1 block text-xl">08.00–18.45</strong></div>
+          <div><span class="eyebrow">Yabancı ziyaretçi</span><strong class="mt-1 block text-xl">15 €</strong></div>
+          <div><span class="eyebrow">Google puanı</span><strong class="mt-1 block text-xl">4,8 / 5 <small class="font-normal text-neutral-500">(22.619)</small></strong></div>
+          <div><span class="eyebrow">Önerilen süre</span><strong class="mt-1 block text-xl">1,5–2,5 saat</strong></div>
+        </div>
+      </section>
+
+      <section id="hikaye" class="shell py-24 md:py-36">
+        <div class="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+          <div>
+            <p class="eyebrow">M.S. 2. yüzyıl</p>
+            <h2 class="section-title mt-4">Bir tiyatrodan fazlası: <span class="text-[var(--terracotta)]">korunmuş bir kent hafızası.</span></h2>
+          </div>
+          <div class="prose-copy space-y-6 text-lg">
+            <p>Aspendos’un tiyatrosu, Marcus Aurelius döneminde yaklaşık M.S. 160–180 arasında inşa edildi. UNESCO’nun Geçici Liste dosyası, mimarı <strong>Teodoros’un oğlu Zenon</strong> olarak kaydeder; yapının inşası Curtius ailesinden iki kardeşin bağışıyla ilişkilidir.</p>
+            <p>Doğu akropol yamacına yaslanan yarım daire cavea ile karşısında neredeyse bütünüyle ayakta duran iki katlı sahne binası, yapıyı benzersiz kılar. Üst sırayı dolaşan tonozlu galeri, seyirci hareketini düzenlerken sahne duvarı Roma tiyatrosunun görkemli mimari perdesini hâlâ okunabilir durumda tutar.</p>
+            <p>13. yüzyılda Selçuklu döneminde onarılan ve saray işleviyle yeniden kullanılan sahne yapısı, tiyatronun olağanüstü ölçüde korunmasına katkıda bulundu. Bugün Aspendos yalnızca antik bir gösteri mekânı değil, Roma’dan Selçuklu’ya uzanan katmanlı bir mimarlık belgesidir.</p>
+          </div>
+        </div>
+
+        <div class="mt-18 grid gap-4 md:grid-cols-12">
+          <figure class="stone-card overflow-hidden md:col-span-7">
+            <img src={photos.interior} alt="Aspendos tiyatrosunda taş oturma sıraları ve sahne yapısı" class="aspect-[4/3] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+            <figcaption class="photo-caption px-4 pb-4">Cavea ile sahne arasındaki sıkı ilişki, sesin ve bakışın tek bir merkezde toplanmasını sağlar.</figcaption>
+          </figure>
+          <div class="grid gap-4 md:col-span-5">
+            <article class="stone-card p-7 md:p-9">
+              <span class="eyebrow">Cavea</span><div class="display mt-3 text-5xl">20 + 21</div><p class="mt-3 text-sm leading-6 text-neutral-600">Alt ve üst oturma bölümleri, diazoma adı verilen yatay dolaşım hattıyla ayrılır.</p>
+            </article>
+            <article class="stone-card p-7 md:p-9">
+              <span class="eyebrow">Sahne cephesi</span><div class="display mt-3 text-5xl">≈ 100 m</div><p class="mt-3 text-sm leading-6 text-neutral-600">Yaklaşık yüz metre genişliğindeki anıtsal cephe, iki kat boyunca mimari bezemeyi taşır.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[var(--night)] py-24 text-[#f1e7d9] md:py-32">
+        <div class="shell grid gap-10 lg:grid-cols-12">
+          <figure class="lg:col-span-7">
+            <div class="arch-border border-white/15"><img src={photos.stage} alt="Aspendos tiyatrosunun iki katlı sahne cephesi" class="aspect-[5/4] object-cover" loading="lazy" referrerpolicy="no-referrer" /></div>
+          </figure>
+          <div class="self-center lg:col-span-5 lg:pl-8">
+            <p class="eyebrow !text-[#df9e77]">Mimariyi oku</p>
+            <h2 class="display mt-4 text-5xl leading-[.95] md:text-7xl">Sahne binası hâlâ “duvar” değil, bir <em class="text-[#d4ad80]">cephe kompozisyonu.</em></h2>
+            <p class="mt-7 max-w-xl leading-7 text-white/65">Kapılar, nişler, frizler, konsollar ve alınlıklar sahne arkasını iki katlı bir mimari fon gibi kurar. Yakından baktığınızda taş yüzeydeki Roma dekorasyonu ile Selçuklu döneminin onarım izlerini aynı yapıda okuyabilirsiniz.</p>
+            <div class="mt-9 border-t border-white/15 pt-6 text-sm leading-7 text-white/55"><strong class="text-white/85">Akustik deneyi:</strong> Ziyaretçi yoğunluğu düşükken orkestraya yakın bir noktada normal konuşma sesiyle deneme yapın; ancak yüksek sesle bağırmak yerine yapının doğal yankısını dinleyin.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ziyaret" class="shell py-24 md:py-32">
+        <div class="max-w-3xl">
+          <p class="eyebrow">Ziyaret bilgileri</p>
+          <h2 class="section-title mt-4">Güneşi, taşı ve kalabalığı hesaba katan plan.</h2>
+        </div>
+        <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <article class="stone-card p-7"><span class="eyebrow">Açılış</span><h3 class="display mt-3 text-3xl">08.00</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Resmî Müze sayfasında her gün için listelenen gündüz açılış saati.</p></article>
+          <article class="stone-card p-7"><span class="eyebrow">Kapanış</span><h3 class="display mt-3 text-3xl">18.45</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Sezon, özel etkinlik veya bakım nedeniyle değişebilir; aynı gün tekrar kontrol edin.</p></article>
+          <article class="stone-card p-7"><span class="eyebrow">Bilet / ücret</span><h3 class="display mt-3 text-3xl">15 €</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Resmî yabancı ziyaretçi tarifesi. T.C. vatandaşları için MüzeKart geçerlidir.</p></article>
+          <article class="stone-card p-7"><span class="eyebrow">Süre</span><h3 class="display mt-3 text-3xl">1,5–2,5 sa.</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Tiyatro + akropol + su yapıları için rahat tempoda önerilen aralık.</p></article>
+        </div>
+        <aside class="mt-6 border-l-2 border-[var(--terracotta)] bg-white/45 p-5 text-sm leading-7 text-neutral-700"><strong>Not:</strong> Gece müzeciliği ve sahne etkinlikleri dönemsel uygulanabilir. Normal gündüz ziyareti ile etkinlik bileti/saatini birbirine karıştırmayın; güncel bilgi için Kültür ve Turizm Bakanlığı Müze kanalını esas alın.</aside>
+      </section>
+
+      <section id="rota" class="border-y border-[var(--line)] bg-white/35 py-24 md:py-32">
+        <div class="shell grid gap-14 lg:grid-cols-[.85fr_1.15fr]">
+          <div class="lg:sticky lg:top-10 lg:self-start">
+            <p class="eyebrow">Yürüyüş rotası</p><h2 class="section-title mt-4">Tiyatroyu tek başına görüp dönmeyin.</h2>
+            <p class="prose-copy mt-7 max-w-lg">Aspendos’un değeri, sahne binasının arkasında devam eden antik kent dokusu ve kuzeye uzanan su sistemiyle birlikte daha iyi anlaşılır.</p>
+          </div>
+          <div class="space-y-10">
+            <article class="route-step" data-step="01"><h3 class="display text-3xl">Sahne cephesi ve orchestra</h3><p class="prose-copy mt-3">Önce zeminden başlayın. Beş kapıyı, iki katlı cephe düzenini ve taş dekorasyonun ölçeğini yakından okuyun.</p></article>
+            <article class="route-step" data-step="02"><h3 class="display text-3xl">Cavea ve üst galeri</h3><p class="prose-copy mt-3">Oturma sıralarını kontrollü biçimde yükselerek tiyatronun yarım daire geometrisini görün. Üst kot, sahne-kent-peyzaj ilişkisini anlamak için en güçlü bakışlardan biridir.</p></article>
+            <article class="route-step" data-step="03"><h3 class="display text-3xl">Akropol: agora, bazilika ve anıtsal yapılar</h3><p class="prose-copy mt-3">Tiyatronun arkasındaki yükseltiye devam edin. Burada Aspendos’un yalnızca bir tiyatrodan ibaret olmadığını, kamusal yaşamın farklı yapılarla örgütlendiğini görürsünüz.</p></article>
+            <article class="route-step" data-step="04"><h3 class="display text-3xl">Su kemerleri</h3><p class="prose-copy mt-3">Vaktiniz varsa Roma su mühendisliğinin en dikkat çekici bölümlerinden olan kemer ve sifon sistemini rotaya ekleyin. Aspendos’un UNESCO Geçici Liste dosyasında tiyatroyla birlikte öne çıkarılmasının nedeni budur.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell py-24 md:py-32">
+        <div class="grid gap-8 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <p class="eyebrow">Fotoğraf noktaları</p><h2 class="section-title mt-4">En iyi kare, yapının geometrisini gösterir.</h2>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2 lg:col-span-7">
+            <article class="stone-card p-7"><b class="display text-2xl">Üst cavea</b><p class="mt-3 text-sm leading-6 text-neutral-600">Yarım daire oturma düzeni, orchestra ve sahne cephesini tek karede toplamak için en güçlü açı. Geniş açı lens burada işe yarar.</p></article>
+            <article class="stone-card p-7"><b class="display text-2xl">Sahne kapıları</b><p class="mt-3 text-sm leading-6 text-neutral-600">Kapı açıklıklarını çerçeve olarak kullanıp taş yüzeyin katmanlarını ve insan ölçeğini birlikte yakalayın.</p></article>
+            <article class="stone-card p-7"><b class="display text-2xl">Dış cephe kemerleri</b><p class="mt-3 text-sm leading-6 text-neutral-600">Daha az bilinen dış dolaşım yüzeyi, kemer ritmini ve Roma mühendisliğini belirgin biçimde gösterir.</p></article>
+            <article class="stone-card p-7"><b class="display text-2xl">Sabah / geç öğleden sonra</b><p class="mt-3 text-sm leading-6 text-neutral-600">Daha alçak güneş, taş kabartıların gölgelerini artırır. Yaz ortasında öğle ışığı sert ve sıcak olabilir.</p></article>
+          </div>
+        </div>
+        <figure class="mt-12 overflow-hidden rounded-[2rem]">
+          <img src={photos.detail} alt="Aspendos tiyatrosunun dış cephe kemer ve taş detayları" class="aspect-[16/7] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+        </figure>
+      </section>
+
+      <section id="ulasim" class="bg-[#d8c3a3] py-24 md:py-32">
+        <div class="shell">
+          <p class="eyebrow">Detaylı ulaşım</p><h2 class="section-title mt-4 max-w-4xl">Serik’in yaklaşık 8 km doğusunda, D400 koridorundan ayrılan Aspendos Yolu üzerinde.</h2>
+          <div class="mt-14 grid gap-6 lg:grid-cols-3">
+            <article class="border-t border-black/20 pt-5"><h3 class="display text-3xl">Özel araç / taksi</h3><p class="mt-4 text-sm leading-7 text-black/65">Antalya yönünden D400 üzerinde Serik’e ilerleyip Aspendos tabelalarını takip edin. Antalya Havalimanı–Aspendos karayolu mesafesi yaklaşık 40 km düzeyindedir; trafik süreyi belirgin biçimde değiştirebilir.</p></article>
+            <article class="border-t border-black/20 pt-5"><h3 class="display text-3xl">Toplu taşıma</h3><p class="mt-4 text-sm leading-7 text-black/65">Antalya’dan önce Serik merkezine ulaşın. Serik’ten Belkıs/Aspendos yönü için güncel yerel minibüs bağlantısını sorun veya son bölümü taksiyle tamamlayın. Dönüş saatini özellikle akşamüstü önceden netleştirin.</p></article>
+            <article class="border-t border-black/20 pt-5"><h3 class="display text-3xl">Tur / transfer</h3><p class="mt-4 text-sm leading-7 text-black/65">Perge–Aspendos–Side kombinasyonları günü verimli kullanır. Ancak rehberli turda tiyatro dışındaki akropol ve su kemerine ayrılan sürenin programa dâhil olup olmadığını kontrol edin.</p></article>
+          </div>
+          <div class="mt-12 stone-card overflow-hidden !bg-[#f2e8d8]">
+            <iframe src={mapSrc} class="map-frame" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Aspendos Antik Tiyatrosu Google Haritası"></iframe>
+          </div>
+          <div class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-black/60"><span><strong>Adres:</strong> Belkıs, Aspendos Yolu, 07500 Serik/Antalya</span><span><strong>Plus Code:</strong> W5QC+HV Serik, Antalya</span></div>
+        </div>
+      </section>
+
+      <section class="shell py-24 md:py-32">
+        <div class="grid gap-12 lg:grid-cols-2">
+          <div>
+            <p class="eyebrow">Otopark</p><h2 class="display mt-4 text-5xl md:text-6xl">Aracı giriş çevresinde bırakın; antik kent içinde yürümeye hazırlanın.</h2>
+            <p class="prose-copy mt-6">Örenyeri girişinin yakınında ziyaretçi araçları için park alanları bulunur. Yoğun sezon ve etkinlik günlerinde yer hızlı dolabileceğinden sabah erken gelmek avantajlıdır. Park düzeni ve ücretlendirme dönemsel değişebileceği için sabit bir ücret vermiyoruz.</p>
+          </div>
+          <div>
+            <p class="eyebrow">En iyi zaman</p><h2 class="display mt-4 text-5xl md:text-6xl">Işığın taş üzerinde yana düştüğü saatleri seçin.</h2>
+            <p class="prose-copy mt-6">İlkbahar ve sonbahar yürüyüş için daha dengeli sıcaklıklar sunar. Yazın sabah açılışa yakın saatler veya geç öğleden sonra hem sıcaklık hem fotoğraf ışığı açısından daha rahattır. Şapka, su ve tabanı iyi tutan ayakkabı getirin.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-[var(--line)] bg-white/35 py-24 md:py-32">
+        <div class="shell">
+          <div class="grid gap-10 lg:grid-cols-[.65fr_1.35fr]">
+            <div><p class="eyebrow">Yakın çevre</p><h2 class="section-title mt-4">Bir güne sığan Pamphylia katmanları.</h2></div>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <article class="stone-card p-7"><span class="eyebrow">Antik kent</span><h3 class="display mt-3 text-3xl">Perge</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Sütunlu caddeleri, agora ve stadyumuyla Aspendos’un tiyatro merkezli deneyimini tamamlayan güçlü bir Roma kenti.</p></article>
+              <article class="stone-card p-7"><span class="eyebrow">Kıyı & tarih</span><h3 class="display mt-3 text-3xl">Side</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Antik tiyatro, kent kalıntıları ve deniz kıyısındaki Apollon Tapınağı ile gün batımına uzatılabilecek bir rota.</p></article>
+              <article class="stone-card p-7"><span class="eyebrow">Doğa</span><h3 class="display mt-3 text-3xl">Köprülü Kanyon</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Köprüçay vadisinde yürüyüş, manzara ve rafting seçenekleri. Aspendos’un nehir sistemiyle tarihsel bağını coğrafyada hissettirir.</p></article>
+              <article class="stone-card p-7"><span class="eyebrow">Kent molası</span><h3 class="display mt-3 text-3xl">Serik</h3><p class="mt-3 text-sm leading-6 text-neutral-600">Yakıt, yemek ve temel ihtiyaçlar için en pratik merkez; Aspendos’a yaklaşık 8 km uzaklıkta.</p></article>
+            </div>
+          </div>
+          <figure class="mt-12 overflow-hidden rounded-[2rem]">
+            <img src={photos.aqueduct} alt="Aspendos antik su kemerlerinin büyük kemerli bölümü" class="aspect-[16/7] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+            <figcaption class="photo-caption px-3">Aspendos’un su kemerleri, UNESCO Geçici Liste dosyasında tiyatroyla birlikte değerlendirilir.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="shell py-24 md:py-32">
+        <div class="grid gap-14 lg:grid-cols-2">
+          <div>
+            <p class="eyebrow">Yakınlarda ne yenir?</p><h2 class="display mt-4 text-5xl md:text-6xl">Turistik mola yerine bölgenin ritmini takip edin.</h2>
+            <div class="mt-8 space-y-5 text-sm leading-7 text-neutral-700">
+              <p><strong>Serik merkez:</strong> Pide, şiş/köfte ve Antalya usulü piyaz için daha fazla yerel seçenek bulunur. Tiyatro çevresine göre fiyat ve menü karşılaştırması yapmak daha kolaydır.</p>
+              <p><strong>Köprüçay yönü:</strong> Kanyon rotasıyla birleştiriyorsanız alabalık ve ızgara ağırlıklı nehir kenarı işletmeleri günün ikinci yarısı için doğal bir mola oluşturur.</p>
+              <p><strong>Belek yönü:</strong> Akşam yemeğinde daha geniş restoran ve otel seçeneği isteyenler için sahil hattı pratiktir.</p>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow">Nerede kalınır?</p><h2 class="display mt-4 text-5xl md:text-6xl">Gezi biçimine göre üç üs.</h2>
+            <div class="mt-8 space-y-5 text-sm leading-7 text-neutral-700">
+              <p><strong>Serik:</strong> Aspendos’a en yakın, ulaşım odaklı ve pratik üs. Erken giriş yapmayı planlayanlar için mantıklı.</p>
+              <p><strong>Belek:</strong> Deniz tatili ve resort konforunu Aspendos günüyle birleştirmek isteyenler için iyi seçenek.</p>
+              <p><strong>Side / Manavgat:</strong> Birden fazla antik kent, sahil ve akşam yürüyüşü planlıyorsanız rotayı doğuya doğru devam ettirmek için uygun.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sss" class="bg-[#221e19] py-24 text-[#f4eadc] md:py-32">
+        <div class="shell grid gap-12 lg:grid-cols-[.55fr_1.45fr]">
+          <div><p class="eyebrow !text-[#dfa17c]">SSS</p><h2 class="display mt-4 text-5xl md:text-6xl">Gitmeden önce kısa cevaplar.</h2></div>
+          <div class="divide-y divide-white/12 border-y border-white/12">
+            {faq.map((item, i) => (
+              <details class="group py-6" open={i === 0}>
+                <summary class="flex cursor-pointer list-none items-start justify-between gap-6 font-semibold"><span>{item.q}</span><span class="text-2xl font-light text-[#dda27e] group-open:rotate-45">+</span></summary>
+                <p class="mt-4 max-w-3xl pr-10 text-sm leading-7 text-white/60">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#161410] py-12 text-white/60">
+      <div class="shell grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div>
+          <img src="/logo.svg" alt="Aspendos Antik Tiyatrosu" class="mb-5 h-auto w-64 brightness-0 invert" />
+          <p class="max-w-2xl text-xs leading-6">Bu site bağımsız bir ziyaret rehberidir; Kültür ve Turizm Bakanlığı, Aspendos Örenyeri veya herhangi bir resmî kurumla bağlantılı değildir. Saat ve ücretler değişebileceğinden ziyaret öncesi resmî kanalları kontrol edin.</p>
+        </div>
+        <div class="text-xs leading-6 md:text-right">
+          <a href="https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">Resmî Müze bilgisi ↗</a><br />
+          <a href="https://whc.unesco.org/en/tentativelists/6036/" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">UNESCO Geçici Liste dosyası ↗</a>
+        </div>
+      </div>
+      <div class="shell mt-8 border-t border-white/10 pt-6 text-[11px] leading-5 text-white/35">
+        Fotoğraflar: Saffron Blaze (CC BY-SA 3.0), Adrian Schneider (CC BY-SA 3.0), Dick Osseman / Dosseman (CC BY-SA 4.0), Wikimedia Commons. Ayrıntılı lisans bilgileri proje içindeki PHOTO-CREDITS.md dosyasındadır.
+      </div>
+    </footer>
+  </body>
+</html>
