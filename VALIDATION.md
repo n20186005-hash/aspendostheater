@@ -1,32 +1,38 @@
 # 交付验证状态
 
-本文件用于明确区分“已完成的源码静态检查”和“因当前执行环境网络限制未能完成的依赖/构建验证”。
+## 已完成的静态检查与构建验证
 
-## 已完成
+- `astro.config.mjs`：`site = 'https://aspendostheater.com'` 已配置；canonical / Open Graph / JSON-LD / sitemap 均由此派生。
+- 依赖安装：`pnpm@12.3.4 install` 已通过并生成 `pnpm-lock.yaml`。
+  - 环境注：本机 pnpm 全局 shim 与其 store 位于“不受信任的装入点”，会报 `ERR_PNPM_CMD_SHIM_READ_MANIFEST`；用 `npx pnpm@12.3.4 install --node-linker=hoisted --package-import-method=copy` 成功规避（仓库内真实目录，无符号链接）。
+- `pnpm-workspace.yaml`：由 pnpm 12 自动生成，仅放行 `esbuild` 构建脚本。
+- `astro check`：**0 errors / 0 warnings / 0 hints**（5 文件）。
+- `astro build`：成功，1 页生成于 `dist/`，输出 `sitemap-index.xml` + `sitemap-0.xml`（23 文件，约 2.25 MB）。
 
-- `package.json` 可正常解析。
-- `package.json` 中 Astro / Tailwind CSS / TypeScript / pnpm / Wrangler 等版本均使用精确版本号。
-- `.node-version` 与 `engines.node` 固定为 Node.js 24.20.0 LTS。
-- 未创建 `pnpm-workspace.yaml`。
-- 源码 grep 未发现 `example.com`、`localhost`、`chrome-extension://`。
-- 站点自身 canonical / Open Graph / JSON-LD URL 从 `Astro.site` 派生；`site` 为空时相关绝对 URL 标签省略。
-- `@astrojs/sitemap` 仅在 `site` 有值时启用。
-- Google Maps iframe 语言/地区参数已改为土耳其语 `tr`。
-- 外部 `<script src>` 仅有用户指定的 GA4 `G-HXM22WWPKP`。
-- Logo、SVG favicon、16x16、32x32、180x180 Apple Touch Icon 和 ICO 均为本地文件并保持统一视觉。
-- 所需内容板块均已写入：票价/费用、详细交通、停车、最佳时段/停留时长、周边景点、周边美食、住宿、FAQ。
+## SEO 实体绑定（单页 varlık bağlama）
 
-## 当前环境未能完成
+- TDK：标题/描述含官方全称 + 城市（Serik, Antalya）。
+- `TouristAttraction` JSON-LD：`@id`、`image[]`、`alternateName`、`geo`、NAP（postalCode 07500 / TR）、`hasMap`、`sameAs`（Google Maps + muze.gov.tr + UNESCO 6036）、`aggregateRating` 4,8 / 22.619、`openingHoursSpecification` 08.00–18.45、`isAccessibleForFree: false`。
+- `FAQPage` JSON-LD：8 问，与 DOM `<details>` 一一对应。
+- H1：`Aspendos Antik Tiyatrosu` + Serik · Antalya · Türkiye 副行；正文面包屑行（Ana sayfa › Türkiye › Antalya › Serik › 全称）。
+- 图片：全部切换为 `public/images/` 本地实景图（优化至 1920/1600 最长边，q82；原 39 MB → 约 2 MB），`og:image` 与 JSON-LD `image` 指向本地 hero；不再依赖远程 Wikimedia 图床。
+- Google Maps：新版短链 `https://maps.app.goo.gl/DSrGmEky8GKnY3pK8` 用于 Hero / 地图块 / 页脚 + JSON-LD `hasMap`/`sameAs`；iframe 使用用户提供的最新 pb embed（含 `referrerpolicy="strict-origin-when-cross-origin"`、lazy）。
+- Kaynaklar 板块：`muze.gov.tr`、UNESCO Geçici Liste（6036）、GoTürkiye 三个官方/权威来源；页脚含同款官方链接 + 全称 + 地址（NAP）。
+- 图片产权声明：页脚与 Kaynaklar 板块均注明“本网站展示的所有图片产权及版权均归原摄影者所有”，并列出 CC BY-SA 作者。
 
-执行：
+## PWA
 
-```bash
-rm -rf node_modules
-CI=1 corepack pnpm install --frozen-lockfile
-```
+- `public/manifest.webmanifest`（tr、theme #9f4d31、192/512 + maskable 图标）。
+- `public/icons/icon-192.png`、`icon-512.png`、`maskable-512.png`（由 apple-touch-icon 栅格化生成）。
+- `public/sw.js`：导航 network-first + 离线兜底 `/`；静态资源 stale-while-revalidate；同源限定；旧缓存清理。
+- 页面 `<head>`：manifest link、apple/mobile meta、SW 注册（仅 https / localhost）。
 
-Corepack 在下载 `pnpm@12.3.4` 时失败，根因是当前容器无法解析 `registry.npmjs.org`（`getaddrinfo EAI_AGAIN`）。完整错误保存在 `.qa/install-error.log`。
+## robots.txt 与 sitemap
 
-因此本次会话无法真实生成并验证 `pnpm-lock.yaml`，也无法继续执行 `pnpm check` 与 `pnpm build`。项目没有放入伪造或不完整的 lockfile，以免把不可复现状态冒充为通过。
+- `robots.txt`：`Allow: /` + `Sitemap: https://aspendostheater.com/sitemap-index.xml`。
+- 构建输出：`dist/sitemap-index.xml` → `dist/sitemap-0.xml` → `https://aspendostheater.com/`。
 
-同一网络限制也阻止了 Wikimedia 图片二进制下载到 `public/images/`。页面使用已核实授权的 Wikimedia Commons 实景照片 URL；来源与许可证见 `PHOTO-CREDITS.md`。
+## 已知说明
+
+- 站点仍为单语（tr）；未引入 hreflang / 多语言。
+- Google 评分 4,8（22.619）依据最新 Google 资料；如日后 Google 计数变化，需同步 Hero、信息条与 JSON-LD `reviewCount`。

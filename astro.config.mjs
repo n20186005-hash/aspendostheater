@@ -2,15 +2,14 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// Alan adı belli olduğunda yalnızca bu satırı doldurun, örn. 'https://alanadiniz.com'.
-// Boş bırakıldığında site yine derlenir; canonical/OG mutlak URL etiketleri atlanır
-// ve sitemap entegrasyonu devre dışı kalır.
-const site = '';
+// Resmî alan adı. Buradan site dâhilindeki canonical, Open Graph,
+// JSON-LD ve sitemap gibi mutlak URL'ler türetilir.
+const site = 'https://aspendostheater.com';
 
 export default defineConfig({
-  site: site || undefined,
+  site,
   output: 'static',
-  integrations: site ? [sitemap()] : [],
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

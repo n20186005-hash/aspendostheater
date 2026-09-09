@@ -1,49 +1,75 @@
 ---
 import '../styles/global.css';
 
-const siteName = 'Aspendos Antik Tiyatrosu';
-const title = 'Aspendos Antik Tiyatrosu | Roma Mimarisi, Ziyaret ve Ulaşım Rehberi';
-const description = 'Antalya Serik’teki Aspendos Antik Tiyatrosu için tarih, mimari, güncel ziyaret saatleri, bilet, ulaşım, otopark, gezi rotası ve yakın çevre rehberi.';
+// ——— Tekil-URL varlık (entity) bağlama ———
+const domain = 'https://aspendostheater.com';
+const fullName = 'Aspendos Antik Tiyatrosu';
+const shortName = 'Aspendos Theatre';
+const cityName = 'Serik';
+const provinceName = 'Antalya';
+const countryName = 'Türkiye';
+
+const siteName = fullName;
+const title = 'Aspendos Antik Tiyatrosu (Serik, Antalya) – Ziyaret Rehberi ve Konum';
+const description = 'Aspendos Antik Tiyatrosu (Serik, Antalya) için güncel ziyaret saatleri, bilet ücreti, ulaşım, otopark, gezi rotası ve yakındaki Perge–Side antik kentleri rehberi.';
+const ogTitle = 'Aspendos Antik Tiyatrosu | Serik, Antalya Gezi Rehberi';
+const ogDescription = 'Tarih, mimari, ziyaret saatleri, bilet, ulaşım ve konum: Roma dünyasının en iyi korunmuş tiyatrosu Aspendos Antik Tiyatrosu için kapsamlı rehber.';
+
+const mapsUrl = 'https://maps.app.goo.gl/DSrGmEky8GKnY3pK8';
+const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068477483!2d31.16742658763456!3d36.93773012331794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c49e7638f76edd%3A0x82aaad9ddfd636b6!2sAspendos%20Theatre!5e1!3m2!1sen!2s!4v1788741225599!5m2!1sen!2s';
+
+const heroImage = '/images/Aspendos_Amphitheatre.jpg';
+const heroImageAlt = `${fullName} – Roma tiyatrosunun yarım daire caveası ve sahne binası, ${cityName}, ${provinceName}`;
+
 const configuredSite = Astro.site;
 const canonicalURL = configuredSite ? new URL(Astro.url.pathname, configuredSite).toString() : undefined;
-const ogImage = configuredSite ? new URL('/social-card.svg', configuredSite).toString() : undefined;
+const ogImage = configuredSite ? new URL(heroImage, configuredSite).toString() : undefined;
 
+// Yerel, gerçek Aspendos fotoğrafları (Wikimedia Commons, CC BY-SA; kaynaklar PHOTO-CREDITS.md)
 const photos = {
-  hero: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Aspendos_Amphitheatre.jpg/1280px-Aspendos_Amphitheatre.jpg',
-  interior: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Roman_theater_in_Aspendos.jpg/1280px-Roman_theater_in_Aspendos.jpg',
-  detail: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Aspendos_Theatre_Exterior_detail_of_front_side_4602.jpg/1280px-Aspendos_Theatre_Exterior_detail_of_front_side_4602.jpg',
-  stage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Aspendos_Theatre_Scaenae_frons_whole_breadth_4777.jpg/1280px-Aspendos_Theatre_Scaenae_frons_whole_breadth_4777.jpg',
-  aqueduct: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Aspendos_Aqueduct_3313.jpg/1280px-Aspendos_Aqueduct_3313.jpg',
+  hero: heroImage,
+  interior: '/images/Roman_theater_in_Aspendos.jpg',
+  detail: '/images/Aspendos_Theatre_Exterior_detail_of_front_side_4602.jpg',
+  stage: '/images/Aspendos_Theatre_Scaenae_frons_whole_breadth_4777.jpg',
+  aqueduct: '/images/Aspendos_Aqueduct_3313.jpg',
 };
 
-const imageUrls = configuredSite
-  ? ['/social-card.svg'].map((path) => new URL(path, configuredSite).toString())
-  : undefined;
+const photoFiles = [
+  heroImage,
+  photos.interior,
+  photos.detail,
+  photos.stage,
+  photos.aqueduct,
+];
 
 const attractionJsonLd = {
   '@context': 'https://schema.org',
-  '@type': ['TouristAttraction', 'LocalBusiness'],
-  name: 'Aspendos Antik Tiyatrosu',
-  alternateName: 'Aspendos Theatre',
-  ...(canonicalURL ? { url: canonicalURL } : {}),
-  ...(imageUrls ? { image: imageUrls } : {}),
-  description,
+  '@type': ['TouristAttraction', 'LandmarksOrHistoricalBuildings'],
+  '@id': `${domain}/#attraction`,
+  name: fullName,
+  alternateName: [shortName, 'Aspendos Tiyatrosu', `${cityName} ${fullName}`],
+  url: domain,
+  image: photoFiles.map((p) => (configuredSite ? new URL(p, configuredSite).toString() : p)),
+  description: `Kapsamlı ziyaret rehberi: ${cityName} (${provinceName}), ${countryName}’deki ${fullName} hakkında tarih, mimari, ziyaret saatleri, bilet ve ulaşım bilgileri.`,
+  isAccessibleForFree: false,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Belkıs, Aspendos Yolu',
     postalCode: '07500',
-    addressLocality: 'Serik',
-    addressRegion: 'Antalya',
+    addressLocality: cityName,
+    addressRegion: provinceName,
     addressCountry: 'TR',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 36.9377301,
-    longitude: 31.1674266,
+    latitude: 36.93773012331794,
+    longitude: 31.16742658763456,
   },
+  hasMap: mapsUrl,
+  sameAs: [mapsUrl, 'https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP', 'https://whc.unesco.org/en/tentativelists/6036/'],
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     opens: '08:00',
     closes: '18:45',
   }],
@@ -53,11 +79,15 @@ const attractionJsonLd = {
     reviewCount: 22619,
     bestRating: 5,
   },
-  priceRange: '€15',
+  priceRange: '15 €',
   publicAccess: true,
 };
 
 const faq = [
+  {
+    q: 'Aspendos Antik Tiyatrosu nerede bulunuyor?',
+    a: 'Aspendos Antik Tiyatrosu, Antalya’nın Serik ilçesine bağlı Belkıs Mahallesi’nde, Aspendos Yolu üzerindedir. Antalya kent merkezine yaklaşık 40 km, Serik merkeze yaklaşık 8 km uzaklıktadır. Plus Code: W5QC+HV Serik, Antalya.'
+  },
   {
     q: 'Aspendos Antik Tiyatrosu hangi saatlerde açık?',
     a: 'Kültür ve Turizm Bakanlığı Müze sayfasında gündüz ziyareti için 08.00–18.45 saatleri listeleniyor. Saatler sezon, özel etkinlik veya bakım nedeniyle değişebileceğinden yola çıkmadan önce resmî Müze sayfasını kontrol etmek en güvenlisidir.'
@@ -76,11 +106,15 @@ const faq = [
   },
   {
     q: 'Tiyatro hâlâ etkinliklerde kullanılıyor mu?',
-    a: 'Evet. Yapı günümüzde de kontrollü kültür ve sahne etkinliklerine ev sahipliği yapabiliyor. Etkinlik günlerinde ziyaret düzeni değişebileceği için programı önceden kontrol edin.'
+    a: 'Evet. Yapı günümüzde de açık hava konserleri, gösteriler ve film gösterimleri gibi kontrollü kültür etkinliklerine ev sahipliği yapabiliyor. Etkinlik günlerinde ziyaret düzeni değişebileceği için programı önceden kontrol edin.'
   },
   {
     q: 'Aspendos UNESCO Dünya Mirası mı?',
     a: 'Aspendos Tiyatrosu ve Su Kemerleri Türkiye’nin UNESCO Dünya Mirası Geçici Listesi’ndedir. Bu statü, alanın henüz Dünya Mirası Listesi’ne kesin olarak kaydedildiği anlamına gelmez.'
+  },
+  {
+    q: 'Aspendos Antik Tiyatrosu ücretsiz mi?',
+    a: 'Hayır. Örenyeri resmî müze statüsündedir ve ziyaret için giriş bileti gereklidir. T.C. vatandaşları için MüzeKart geçerlidir; güncel ücretler için resmî Müze kanalını kontrol edin.'
   },
 ];
 
@@ -94,8 +128,32 @@ const faqJsonLd = {
   })),
 };
 
-const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068477483!2d31.16742658763456!3d36.93773012331794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c49e7638f76edd%3A0x82aaad9ddfd636b6!2sAspendos%20Theatre!5e1!3m2!1str!2str!4v1788741225599!5m2!1str!2str';
+const sources = [
+  {
+    name: 'Resmî Müze sayfası – Aspendos Örenyeri',
+    href: 'https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP',
+    note: 'Ziyaret saatleri, ücret tarifesi ve etkinlik duyuruları için resmî kanal.'
+  },
+  {
+    name: 'UNESCO Dünya Mirası Geçici Listesi – Aspendos',
+    href: 'https://whc.unesco.org/en/tentativelists/6036/',
+    note: 'Aspendos Tiyatrosu ve Su Kemerleri’nin adaylık dosyası.'
+  },
+  {
+    name: 'Türkiye Resmî Turizm Portalı (GoTürkiye)',
+    href: 'https://www.goturkiye.com/',
+    note: 'Antalya ve Pamphylia bölgesi kültür–turizm rotaları için resmî portal.'
+  }
+];
+
+const breadcrumb = [
+  { name: 'Türkiye', url: undefined },
+  { name: 'Antalya', url: undefined },
+  { name: 'Serik', url: undefined },
+  { name: fullName, url: canonicalURL, current: true },
+];
 ---
+
 <!doctype html>
 <html lang="tr">
   <head>
@@ -106,13 +164,19 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
     <meta name="theme-color" content="#9f4d31" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Aspendos Tiyatrosu" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image:alt" content={heroImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -122,32 +186,40 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <script type="application/ld+json" set:html={JSON.stringify(attractionJsonLd)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionJsonLd)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)}></script>
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
+    </script>
+    <script is:inline>
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname))) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
     </script>
   </head>
   <body>
     <header class="absolute inset-x-0 top-0 z-30 border-b border-white/15 text-white">
       <div class="shell flex h-20 items-center justify-between gap-6">
-        <a href="#top" aria-label="Aspendos ana sayfa" class="flex items-center gap-3 no-underline">
+        <a href="#top" aria-label="Aspendos Antik Tiyatrosu ana sayfa" class="flex items-center gap-3 no-underline">
           <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
             <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M10 52V29C10 17 20 8 32 8s22 9 22 21v23"/><path d="M17 52V32c0-8 7-15 15-15s15 7 15 15v20" opacity=".72"/><path d="M17 52c5-8 25-8 30 0M21 43c5-6 17-6 22 0M10 52h44"/>
             </g>
           </svg>
-          <span><b class="display block text-lg leading-none">Aspendos</b><span class="mt-1 block text-[10px] font-bold tracking-[.23em]">ANTİK TİYATROSU</span></span>
+          <span><b class="display block text-lg leading-none">Aspendos Antik Tiyatrosu</b><span class="mt-1 block text-[10px] font-bold tracking-[.23em]">SERİK · ANTALYA</span></span>
         </a>
         <nav aria-label="Ana menü" class="hidden items-center gap-7 text-sm font-semibold md:flex">
           <a href="#hikaye" class="no-underline hover:opacity-70">Tarih</a>
           <a href="#ziyaret" class="no-underline hover:opacity-70">Ziyaret</a>
           <a href="#ulasim" class="no-underline hover:opacity-70">Ulaşım</a>
           <a href="#rota" class="no-underline hover:opacity-70">Rota</a>
+          <a href="#kaynaklar" class="no-underline hover:opacity-70">Kaynaklar</a>
           <a href="#sss" class="no-underline hover:opacity-70">SSS</a>
         </nav>
       </div>
@@ -155,15 +227,18 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
 
     <main id="top">
       <section class="hero-mask min-h-[760px] bg-[#1a1815]">
-        <img src={photos.hero} alt="Aspendos Antik Tiyatrosu’nun yüksekten görülen yarım daire caveası ve sahne binası" class="hero-image h-[94vh] max-h-[980px] w-full" fetchpriority="high" referrerpolicy="no-referrer" />
-        <div class="hero-copy">
+        <img src={photos.hero} alt={heroImageAlt} class="hero-image h-[94vh] max-h-[980px] w-full" />        <div class="hero-copy">
           <div class="mb-5 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[.18em] text-white/75">
-            <span>Serik · Antalya</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>Roma Dönemi</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>UNESCO Geçici Liste</span>
+            <span>Roma Dönemi</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>UNESCO Geçici Liste</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>Google 4,8 · 22.619 yorum</span>
           </div>
-          <h1 class="display max-w-5xl text-[clamp(4rem,10vw,9.3rem)] leading-[.79]">Taşın içindeki <em class="font-normal text-[#dfb68c]">ses.</em></h1>
+          <h1 class="display max-w-6xl text-[clamp(3rem,8.5vw,7.8rem)] leading-[.84]">Aspendos Antik <em class="font-normal text-[#dfb68c]">Tiyatrosu</em></h1>
+          <p class="mt-5 display text-[clamp(1.05rem,2.1vw,1.6rem)] leading-snug text-[#dfb68c]">“Taşın içindeki ses.” <span class="mt-2 block font-sans text-xs font-bold uppercase tracking-[.26em] text-white/70">{cityName} · {provinceName} · {countryName}</span></p>
           <div class="mt-8 grid max-w-4xl gap-5 border-t border-white/25 pt-6 md:grid-cols-[1.45fr_.55fr]">
-            <p class="max-w-2xl text-base leading-7 text-white/80 md:text-lg">Marcus Aurelius döneminden bugüne ayakta kalan, iki katlı sahne binası ve güçlü akustiğiyle Akdeniz dünyasının en etkileyici Roma tiyatrolarından biri.</p>
-            <div class="flex items-end md:justify-end"><a href="#ziyaret" class="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-bold no-underline backdrop-blur hover:bg-white hover:text-black">Ziyareti planla ↓</a></div>
+            <p class="max-w-2xl text-base leading-7 text-white/80 md:text-lg">İki katlı sahne binası ve güçlü akustiğiyle {shortName} olarak da bilinen bu yapı, Marcus Aurelius döneminden bugüne ayakta kalan, Akdeniz dünyasının en etkileyici Roma tiyatrolarından biri.</p>
+            <div class="flex items-end gap-3 md:justify-end">
+              <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#dfb68c] px-5 py-3 text-sm font-bold no-underline text-[#1a1815] hover:bg-white" aria-label="Aspendos Antik Tiyatrosu Google Haritalar konumu">Konum ↗</a>
+              <a href="#ziyaret" class="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-bold no-underline backdrop-blur hover:bg-white hover:text-black">Ziyareti planla ↓</a>
+            </div>
           </div>
         </div>
       </section>
@@ -177,6 +252,20 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
         </div>
       </section>
 
+      <section class="border-b border-[var(--line)] bg-white/40 py-3">
+        <div class="shell flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500">
+          <a href="#top" class="underline decoration-neutral-300 underline-offset-4 hover:text-[var(--terracotta)]">Ana sayfa</a>
+          {breadcrumb.map((item) => (
+            <span class="flex items-center gap-2">
+              <span class="text-neutral-300">›</span>
+              {item.current
+                ? <strong class="font-semibold text-[var(--terracotta)]">{item.name}</strong>
+                : <span>{item.name}</span>}
+            </span>
+          ))}
+        </div>
+      </section>
+
       <section id="hikaye" class="shell py-24 md:py-36">
         <div class="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
           <div>
@@ -184,7 +273,7 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
             <h2 class="section-title mt-4">Bir tiyatrodan fazlası: <span class="text-[var(--terracotta)]">korunmuş bir kent hafızası.</span></h2>
           </div>
           <div class="prose-copy space-y-6 text-lg">
-            <p>Aspendos’un tiyatrosu, Marcus Aurelius döneminde yaklaşık M.S. 160–180 arasında inşa edildi. UNESCO’nun Geçici Liste dosyası, mimarı <strong>Teodoros’un oğlu Zenon</strong> olarak kaydeder; yapının inşası Curtius ailesinden iki kardeşin bağışıyla ilişkilidir.</p>
+            <p><strong>{fullName}</strong> ({shortName} olarak da anılır), {provinceName}’nın {cityName} ilçesindeki Belkıs yakınlarında yer alan antik Aspendos kentinin anıtsal yapısıdır. Marcus Aurelius döneminde yaklaşık M.S. 160–180 arasında inşa edildi. UNESCO’nun Geçici Liste dosyası, mimarı <strong>Teodoros’un oğlu Zenon</strong> olarak kaydeder; yapının inşası Curtius ailesinden iki kardeşin bağışıyla ilişkilidir.</p>
             <p>Doğu akropol yamacına yaslanan yarım daire cavea ile karşısında neredeyse bütünüyle ayakta duran iki katlı sahne binası, yapıyı benzersiz kılar. Üst sırayı dolaşan tonozlu galeri, seyirci hareketini düzenlerken sahne duvarı Roma tiyatrosunun görkemli mimari perdesini hâlâ okunabilir durumda tutar.</p>
             <p>13. yüzyılda Selçuklu döneminde onarılan ve saray işleviyle yeniden kullanılan sahne yapısı, tiyatronun olağanüstü ölçüde korunmasına katkıda bulundu. Bugün Aspendos yalnızca antik bir gösteri mekânı değil, Roma’dan Selçuklu’ya uzanan katmanlı bir mimarlık belgesidir.</p>
           </div>
@@ -192,7 +281,7 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
 
         <div class="mt-18 grid gap-4 md:grid-cols-12">
           <figure class="stone-card overflow-hidden md:col-span-7">
-            <img src={photos.interior} alt="Aspendos tiyatrosunda taş oturma sıraları ve sahne yapısı" class="aspect-[4/3] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+            <img src={photos.interior} alt={`${fullName} taş oturma sıraları ve sahne yapısı – iç görünüm`} class="aspect-[4/3] object-cover" loading="lazy" />
             <figcaption class="photo-caption px-4 pb-4">Cavea ile sahne arasındaki sıkı ilişki, sesin ve bakışın tek bir merkezde toplanmasını sağlar.</figcaption>
           </figure>
           <div class="grid gap-4 md:col-span-5">
@@ -209,7 +298,7 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
       <section class="bg-[var(--night)] py-24 text-[#f1e7d9] md:py-32">
         <div class="shell grid gap-10 lg:grid-cols-12">
           <figure class="lg:col-span-7">
-            <div class="arch-border border-white/15"><img src={photos.stage} alt="Aspendos tiyatrosunun iki katlı sahne cephesi" class="aspect-[5/4] object-cover" loading="lazy" referrerpolicy="no-referrer" /></div>
+            <div class="arch-border border-white/15"><img src={photos.stage} alt={`${fullName} iki katlı sahne cephesi, ${cityName}, ${provinceName}`} class="aspect-[5/4] object-cover" loading="lazy" /></div>
           </figure>
           <div class="self-center lg:col-span-5 lg:pl-8">
             <p class="eyebrow !text-[#df9e77]">Mimariyi oku</p>
@@ -262,7 +351,7 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
           </div>
         </div>
         <figure class="mt-12 overflow-hidden rounded-[2rem]">
-          <img src={photos.detail} alt="Aspendos tiyatrosunun dış cephe kemer ve taş detayları" class="aspect-[16/7] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+          <img src={photos.detail} alt={`${fullName} dış cephe kemer ve taş detayları – ${shortName}`} class="aspect-[16/7] object-cover" loading="lazy" />
         </figure>
       </section>
 
@@ -275,9 +364,13 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
             <article class="border-t border-black/20 pt-5"><h3 class="display text-3xl">Tur / transfer</h3><p class="mt-4 text-sm leading-7 text-black/65">Perge–Aspendos–Side kombinasyonları günü verimli kullanır. Ancak rehberli turda tiyatro dışındaki akropol ve su kemerine ayrılan sürenin programa dâhil olup olmadığını kontrol edin.</p></article>
           </div>
           <div class="mt-12 stone-card overflow-hidden !bg-[#f2e8d8]">
-            <iframe src={mapSrc} class="map-frame" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Aspendos Antik Tiyatrosu Google Haritası"></iframe>
+            <iframe src={mapSrc} class="map-frame" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title={`${fullName} Google Haritası – ${cityName}, ${provinceName}`}></iframe>
           </div>
-          <div class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-black/60"><span><strong>Adres:</strong> Belkıs, Aspendos Yolu, 07500 Serik/Antalya</span><span><strong>Plus Code:</strong> W5QC+HV Serik, Antalya</span></div>
+          <div class="mt-5 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-black/60">
+            <span><strong>Adres:</strong> Belkıs, Aspendos Yolu, 07500 Serik/Antalya, Türkiye</span>
+            <span><strong>Plus Code:</strong> W5QC+HV Serik, Antalya</span>
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#1a1815] px-5 py-2 text-xs font-bold text-white no-underline hover:bg-black">Google Haritada aç ↗</a>
+          </div>
         </div>
       </section>
 
@@ -306,7 +399,7 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
             </div>
           </div>
           <figure class="mt-12 overflow-hidden rounded-[2rem]">
-            <img src={photos.aqueduct} alt="Aspendos antik su kemerlerinin büyük kemerli bölümü" class="aspect-[16/7] object-cover" loading="lazy" referrerpolicy="no-referrer" />
+            <img src={photos.aqueduct} alt={`${fullName} yakınındaki Aspendos su kemerleri`} class="aspect-[16/7] object-cover" loading="lazy" />
             <figcaption class="photo-caption px-3">Aspendos’un su kemerleri, UNESCO Geçici Liste dosyasında tiyatroyla birlikte değerlendirilir.</figcaption>
           </figure>
         </div>
@@ -333,6 +426,30 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
         </div>
       </section>
 
+      <section id="kaynaklar" class="bg-[#e8dcc8] py-24 md:py-32">
+        <div class="shell">
+          <p class="eyebrow">Kaynaklar</p>
+          <h2 class="section-title mt-4 max-w-3xl">Resmî ve güvenilir kaynaklarla doğrulanmış bilgi.</h2>
+          <div class="mt-12 grid gap-5 md:grid-cols-3">
+            {sources.map((source) => (
+              <article class="stone-card flex flex-col !bg-[#f2e8d8] p-7">
+                <h3 class="display text-2xl leading-tight">{source.name}</h3>
+                <p class="mt-3 flex-1 text-sm leading-6 text-neutral-600">{source.note}</p>
+                <a href={source.href} target="_blank" rel="noopener noreferrer" class="mt-4 text-sm font-bold text-[var(--terracotta)] underline decoration-[var(--terracotta)]/30 underline-offset-4">Resmî sayfaya git ↗</a>
+              </article>
+            ))}
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-2">
+            <aside class="border-l-2 border-[var(--terracotta)] bg-white/45 p-5 text-sm leading-7 text-neutral-700">
+              <strong>Güncellik:</strong> Saatler ve ücretler dönemsel değişebilir. Sayfa Eylül 2026’da gözden geçirilmiştir; yola çıkmadan önce resmî Müze kanalını kontrol edin.
+            </aside>
+            <aside class="border-l-2 border-[var(--olive)] bg-white/45 p-5 text-sm leading-7 text-neutral-700">
+              <strong>Fotoğraf telifleri:</strong> Bu sitede gösterilen tüm fotoğrafların mülkiyeti ve telif hakları özgün fotoğrafçılarına aittir. Fotoğraflar: Saffron Blaze (CC BY-SA 3.0), Adrian Schneider (CC BY-SA 3.0), Dick Osseman / Dosseman (CC BY-SA 4.0), Wikimedia Commons.
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section id="sss" class="bg-[#221e19] py-24 text-[#f4eadc] md:py-32">
         <div class="shell grid gap-12 lg:grid-cols-[.55fr_1.45fr]">
           <div><p class="eyebrow !text-[#dfa17c]">SSS</p><h2 class="display mt-4 text-5xl md:text-6xl">Gitmeden önce kısa cevaplar.</h2></div>
@@ -349,18 +466,25 @@ const mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.81068
     </main>
 
     <footer class="bg-[#161410] py-12 text-white/60">
-      <div class="shell grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+      <div class="shell grid gap-10 md:grid-cols-[1.2fr_.8fr] md:items-start">
         <div>
-          <img src="/logo.svg" alt="Aspendos Antik Tiyatrosu" class="mb-5 h-auto w-64 brightness-0 invert" />
+          <a href="#top" class="inline-block no-underline"><img src="/logo.svg" alt={`${fullName} – ${cityName}, ${provinceName} logosu`} class="mb-5 h-auto w-64 brightness-0 invert" /></a>
           <p class="max-w-2xl text-xs leading-6">Bu site bağımsız bir ziyaret rehberidir; Kültür ve Turizm Bakanlığı, Aspendos Örenyeri veya herhangi bir resmî kurumla bağlantılı değildir. Saat ve ücretler değişebileceğinden ziyaret öncesi resmî kanalları kontrol edin.</p>
+          <p class="mt-4 max-w-2xl text-xs leading-6"><strong class="text-white/80">{fullName}</strong><br />Belkıs, Aspendos Yolu, 07500 Serik / Antalya, Türkiye</p>
+          <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">Google Maps konumu ↗</a>
+            <a href="https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">Resmî Müze bilgisi ↗</a>
+            <a href="https://whc.unesco.org/en/tentativelists/6036/" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">UNESCO Geçici Liste dosyası ↗</a>
+          </div>
         </div>
         <div class="text-xs leading-6 md:text-right">
-          <a href="https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">Resmî Müze bilgisi ↗</a><br />
-          <a href="https://whc.unesco.org/en/tentativelists/6036/" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">UNESCO Geçici Liste dosyası ↗</a>
+          <span class="text-white/45">Konum</span><br />
+          <strong class="text-white/80">W5QC+HV Serik, Antalya</strong><br />
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">Yol tarifi al ↗</a>
         </div>
       </div>
       <div class="shell mt-8 border-t border-white/10 pt-6 text-[11px] leading-5 text-white/35">
-        Fotoğraflar: Saffron Blaze (CC BY-SA 3.0), Adrian Schneider (CC BY-SA 3.0), Dick Osseman / Dosseman (CC BY-SA 4.0), Wikimedia Commons. Ayrıntılı lisans bilgileri proje içindeki PHOTO-CREDITS.md dosyasındadır.
+        Bu sitede gösterilen tüm fotoğrafların mülkiyeti ve telif hakları özgün fotoğrafçılarına aittir. Fotoğraflar: Saffron Blaze (CC BY-SA 3.0), Adrian Schneider (CC BY-SA 3.0), Dick Osseman / Dosseman (CC BY-SA 4.0), Wikimedia Commons. Ayrıntılı lisans bilgileri PHOTO-CREDITS.md dosyasındadır.
       </div>
     </footer>
   </body>

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://aspendostheater.com/sitemap-index.xml

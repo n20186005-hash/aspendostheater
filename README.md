@@ -4,22 +4,26 @@ Tek sayfalık, Türkçe Aspendos ziyaret rehberi. Tasarım tiyatronun yarım dai
 
 ## Teknoloji
 
-- Astro 7
+- Astro 7 (statik, `dist/`)
 - Tailwind CSS 4 (Vite eklentisi)
 - TypeScript 6
 - pnpm
 - Cloudflare Workers Static Assets / Wrangler
 - GA4: `G-HXM22WWPKP`
+- PWA (manifest + service worker + ikonlar)
 
 ## Alan adı
 
-Alan adı yalnızca `astro.config.mjs` içindeki `site` sabitinde tanımlanır. Başlangıçta boştur.
+`https://aspendostheater.com` — `astro.config.mjs` içindeki `site` sabitinde tanımlanır; canonical, Open Graph, JSON-LD ve sitemap mutlak URL'leri buradan türetilir.
 
-```js
-const site = '';
-```
+## Tekil-URL varlık bağlama (SEO)
 
-Alan adı belirlenince yalnızca bu değeri örneğin `https://alanadiniz.com` biçiminde doldurun. `site` boşken canonical ve mutlak Open Graph URL etiketleri üretilmez; `@astrojs/sitemap` da yüklenmez. Böylece hiçbir sahte alan adı çıktıya girmez.
+- **TDK:** Başlık ve açıklama resmî tam adı + şehri (Serik, Antalya) içerir.
+- **JSON-LD:** `TouristAttraction` (`@id`, `image`, `geo`, NAP, `hasMap`, `sameAs`, `aggregateRating` 4,8 / 22.619, `openingHoursSpecification`) + `FAQPage` (8 soru).
+- **H1:** Aspendos Antik Tiyatrosu + Serik · Antalya · Türkiye.
+- **Konum:** Google Maps paylaşım bağlantısı `https://maps.app.goo.gl/DSrGmEky8GKnY3pK8` sayfa içinde (Hero, harita bloğu, footer) ve JSON-LD `hasMap`/`sameAs` olarak kullanılır; harita iframe'i resmî embed src ile gömülür.
+- **Kaynaklar:** `muze.gov.tr`, UNESCO Geçici Liste (6036), GoTürkiye.
+- **Fotoğraflar:** Gerçek Aspendos fotoğrafları yerel `public/images/` içinde optimize edilmiş (Wikimedia Commons, CC BY-SA; lisanslar `PHOTO-CREDITS.md`).
 
 ## Kurulum ve kontrol
 
@@ -37,7 +41,3 @@ pnpm build
 ```bash
 pnpm deploy
 ```
-
-## Fotoğraflar
-
-Gerçek Aspendos fotoğraflarının kaynak ve lisansları `PHOTO-CREDITS.md` içindedir. Bu çalışma oturumunda dış binary indirme kapalı olduğundan fotoğraf dosyaları yerelleştirilememiş, Wikimedia Commons CDN kullanılmıştır. Kodda stok ya da yapay görsel bulunmaz.
