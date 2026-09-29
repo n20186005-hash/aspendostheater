@@ -30,7 +30,7 @@ const content = getContent(locale);
 const site = Astro.site;
 const origin = site ? site.toString().replace(/\/$/, '') : '';
 const canonicalURL = site ? new URL(path, site).toString() : undefined;
-const alternates = hreflangAlternates(path, site);
+const alternates = hreflangAlternates(path, origin);
 const ogImage = site ? new URL(PHOTOS.hero, site).toString() : undefined;
 const homeHref = localeHref(locale, '/');
 
