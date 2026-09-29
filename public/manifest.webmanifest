@@ -1,7 +1,7 @@
 {
-  "name": "Aspendos Antik Tiyatrosu – Ziyaret Rehberi",
+  "name": "Aspendos Antik Tiyatrosu Serik — Gezi Rehberi",
   "short_name": "Aspendos Tiyatrosu",
-  "description": "Aspendos Antik Tiyatrosu (Serik, Antalya) ziyaret rehberi: tarih, mimari, saatler, bilet, ulaşım, rota ve yakın çevre.",
+  "description": "Aspendos Antik Tiyatrosu (Serik, Antalya) ziyaret rehberi: tarih, mimari, ziyaret saatleri, bilet ücreti, ulaşım, rota ve yakın çevre.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

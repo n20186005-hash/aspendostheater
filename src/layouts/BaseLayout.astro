@@ -1,0 +1,167 @@
+---
+import '../styles/global.css';
+import { ATTRACTION, PHOTOS, SITE_NAMES } from '../data/site';
+import {
+  htmlLang,
+  hreflangAlternates,
+  locales,
+  localeHref,
+  localeShort,
+  ogLocale,
+  sectionIds,
+} from '../i18n';
+import type { Locale } from '../i18n';
+import { getContent } from '../content';
+
+interface Props {
+  locale: Locale;
+  /** Kök göreli yol: tr için '/', en için '/en/' */
+  path?: string;
+  title: string;
+  description: string;
+  ogTitle: string;
+  ogDescription: string;
+  schema: Record<string, unknown>[];
+}
+
+const { locale, path = '/', title, description, ogTitle, ogDescription, schema } = Astro.props;
+
+const content = getContent(locale);
+const site = Astro.site;
+const origin = site ? site.toString().replace(/\/$/, '') : '';
+const canonicalURL = site ? new URL(path, site).toString() : undefined;
+const alternates = hreflangAlternates(path, site);
+const ogImage = site ? new URL(PHOTOS.hero, site).toString() : undefined;
+const homeHref = localeHref(locale, '/');
+
+const navItems = [
+  { href: `#${sectionIds.history}`, label: content.nav.history },
+  { href: `#${sectionIds.visit}`, label: content.nav.visit },
+  { href: `#${sectionIds.transport}`, label: content.nav.transport },
+  { href: `#${sectionIds.route}`, label: content.nav.route },
+  { href: `#${sectionIds.sources}`, label: content.nav.sources },
+  { href: `#${sectionIds.faq}`, label: content.nav.faq },
+];
+---
+
+<!doctype html>
+<html lang={htmlLang[locale]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#9f4d31" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    {alternates.map((alt) => <link rel="alternate" hreflang={alt.lang} href={alt.href} />)}
+    <link rel="preload" as="image" href={PHOTOS.hero} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Aspendos" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale[locale]} />
+    <meta property="og:site_name" content={SITE_NAMES[locale]} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image:alt" content={content.hero.imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    {schema.map((item) => (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(item)}></script>
+    ))}
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
+    </script>
+    <script is:inline>
+      if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname))) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <header class="absolute inset-x-0 top-0 z-30 border-b border-white/15 text-white">
+      <div class="shell flex h-20 items-center justify-between gap-6">
+        <a href={homeHref} aria-label={SITE_NAMES[locale]} class="flex items-center gap-3 no-underline">
+          <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 52V29C10 17 20 8 32 8s22 9 22 21v23"/><path d="M17 52V32c0-8 7-15 15-15s15 7 15 15v20" opacity=".72"/><path d="M17 52c5-8 25-8 30 0M21 43c5-6 17-6 22 0M10 52h44"/>
+            </g>
+          </svg>
+          <span><b class="display block text-lg leading-none">{ATTRACTION.name[locale]}</b><span class="mt-1 block text-[10px] font-bold tracking-[.23em]">SERİK · ANTALYA</span></span>
+        </a>
+        <nav aria-label={SITE_NAMES[locale]} class="hidden items-center gap-7 text-sm font-semibold md:flex">
+          {navItems.map((item) => (
+            <a href={item.href} class="no-underline hover:opacity-70">{item.label}</a>
+          ))}
+        </nav>
+        <nav aria-label="Dil" class="flex items-center gap-2 text-xs font-bold">
+          {locales.map((code) => (
+            <a
+              href={localeHref(code, '/')}
+              hreflang={htmlLang[code]}
+              aria-current={code === locale ? 'true' : undefined}
+              class:list={[
+                'rounded-full border px-3 py-1.5 no-underline',
+                code === locale
+                  ? 'border-white bg-white text-[#1a1815]'
+                  : 'border-white/40 text-white hover:bg-white/15',
+              ]}
+            >
+              {localeShort[code]}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <slot />
+    </main>
+
+    <footer class="bg-[#161410] py-12 text-white/60">
+      <div class="shell grid gap-10 md:grid-cols-[1.2fr_.8fr] md:items-start">
+        <div>
+          <a href={homeHref} class="inline-block no-underline"><img src="/logo.svg" alt={`${ATTRACTION.name[locale]} – ${ATTRACTION.city}, ${ATTRACTION.province}`} class="mb-5 h-auto w-64 brightness-0 invert" /></a>
+          <p class="max-w-2xl text-xs leading-6">{content.footer.disclaimer}</p>
+          <p class="mt-4 max-w-2xl text-xs leading-6"><strong class="text-white/80">{ATTRACTION.name[locale]}</strong><br />{ATTRACTION.addressLine}</p>
+          <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <a href={ATTRACTION.mapsUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">{content.footer.links.map}</a>
+            <a href={ATTRACTION.official[0].href} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">{content.footer.links.museum}</a>
+            <a href={ATTRACTION.official[1].href} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">{content.footer.links.unesco}</a>
+          </div>
+        </div>
+        <div class="text-xs leading-6 md:text-right">
+          <span class="text-white/45">{content.footer.locationLabel}</span><br />
+          <strong class="text-white/80">{ATTRACTION.plusCode}</strong><br />
+          <a href={ATTRACTION.mapsUrl} target="_blank" rel="noopener noreferrer" class="underline decoration-white/20 underline-offset-4">{content.footer.directions}</a>
+          <div class="mt-4 flex gap-2 md:justify-end">
+            {locales.map((code) => (
+              <a href={localeHref(code, '/')} hreflang={htmlLang[code]} class:list={['rounded-full border px-3 py-1 no-underline', code === locale ? 'border-white bg-white text-[#161410]' : 'border-white/30']}>{localeShort[code]}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="shell mt-8 border-t border-white/10 pt-6 text-[11px] leading-5 text-white/35">
+        {content.footer.photoCredit} {origin && <a href={`${origin}/`} class="underline decoration-white/20 underline-offset-4">{SITE_NAMES[locale]}</a>}
+      </div>
+    </footer>
+  </body>
+</html>

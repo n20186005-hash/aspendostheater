@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeContent from '../../components/HomeContent.astro';
+import { getContent } from '../../content';
+import {
+  buildAttractionSchema,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildOrganizationSchema,
+  buildWebsiteSchema,
+} from '../../lib/schema';
+
+const locale = 'en' as const;
+const path = '/en/';
+const content = getContent(locale);
+const site = Astro.site?.toString();
+const canonical = site ? new URL(path, site).toString() : '';
+
+const schema = [
+  buildAttractionSchema(locale, path, site, content.meta.description),
+  buildFaqSchema(content.faq.items),
+  buildBreadcrumbSchema(content.crumbs, canonical, site),
+  buildWebsiteSchema(locale, path, site),
+  buildOrganizationSchema(),
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path={path}
+  title={content.meta.title}
+  description={content.meta.description}
+  ogTitle={content.meta.ogTitle}
+  ogDescription={content.meta.ogDescription}
+  schema={schema}
+>
+  <HomeContent locale={locale} />
+</BaseLayout>

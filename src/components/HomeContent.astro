@@ -1,0 +1,242 @@
+---
+import { ATTRACTION, PHOTOS } from '../data/site';
+import { getContent } from '../content';
+import { sectionIds } from '../i18n';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const c = getContent(locale);
+const crumbCount = c.crumbs.length;
+---
+
+<section class="hero-mask min-h-[760px] bg-[#1a1815]">
+  <img src={PHOTOS.hero} alt={c.hero.imageAlt} class="hero-image h-[94vh] max-h-[980px] w-full" />
+  <div class="hero-copy">
+    <div class="mb-5 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[.18em] text-white/75">
+      <span>{c.hero.badges.period}</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>{c.hero.badges.heritage}</span><span class="h-1 w-1 rounded-full bg-white/50"></span><span>{c.hero.badges.rating}</span>
+    </div>
+    <h1 class="display max-w-6xl text-[clamp(3rem,8.5vw,7.8rem)] leading-[.84]">{c.hero.titleLead} <em class="font-normal text-[#dfb68c]">{c.hero.titleAccent}</em></h1>
+    <p class="mt-5 display text-[clamp(1.05rem,2.1vw,1.6rem)] leading-snug text-[#dfb68c]">{c.hero.tagline} <span class="mt-2 block font-sans text-xs font-bold uppercase tracking-[.26em] text-white/70">{ATTRACTION.city} · {ATTRACTION.province} · {ATTRACTION.country}</span></p>
+    <div class="mt-8 grid max-w-4xl gap-5 border-t border-white/25 pt-6 md:grid-cols-[1.45fr_.55fr]">
+      <p class="max-w-2xl text-base leading-7 text-white/80 md:text-lg">{c.hero.lead}</p>
+      <div class="flex items-end gap-3 md:justify-end">
+        <a href={ATTRACTION.mapsUrl} target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#dfb68c] px-5 py-3 text-sm font-bold no-underline text-[#1a1815] hover:bg-white">{c.hero.ctaMap}</a>
+        <a href={`#${sectionIds.visit}`} class="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-bold no-underline backdrop-blur hover:bg-white hover:text-black">{c.hero.ctaPlan}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="border-b border-[var(--line)] py-7">
+  <div class="shell grid gap-5 text-sm sm:grid-cols-2 lg:grid-cols-4">
+    {c.facts.map((fact) => (
+      <div><span class="eyebrow">{fact.label}</span><strong class="mt-1 block text-xl">{fact.title}</strong><span class="mt-1 block text-xs leading-5 text-neutral-600">{fact.body}</span></div>
+    ))}
+  </div>
+</section>
+
+<section class="border-b border-[var(--line)] bg-white/40 py-3">
+  <div class="shell flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-500">
+    {c.crumbs.map((name, i) => (
+      <span class="flex items-center gap-2">
+        <span class="text-neutral-300">›</span>
+        {i === crumbCount - 1 ? <strong class="font-semibold text-[var(--terracotta)]">{name}</strong> : <span>{name}</span>}
+      </span>
+    ))}
+  </div>
+</section>
+
+<section id={sectionIds.history} class="shell py-24 md:py-36">
+  <div class="grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+    <div>
+      <p class="eyebrow">{c.story.eyebrow}</p>
+      <h2 class="section-title mt-4">{c.story.titlePrefix} <span class="text-[var(--terracotta)]">{c.story.titleAccent}</span></h2>
+    </div>
+    <div class="prose-copy space-y-6 text-lg">
+      {c.story.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+
+  <div class="mt-18 grid gap-4 md:grid-cols-12">
+    <figure class="stone-card overflow-hidden md:col-span-7">
+      <img src={PHOTOS.interior} alt={c.story.interiorAlt} class="aspect-[4/3] object-cover" loading="lazy" />
+      <figcaption class="photo-caption px-4 pb-4">{c.story.figureCaption}</figcaption>
+    </figure>
+    <div class="grid gap-4 md:col-span-5">
+      {c.story.stats.map((stat) => (
+        <article class="stone-card p-7 md:p-9">
+          <span class="eyebrow">{stat.label}</span><div class="display mt-3 text-5xl">{stat.title}</div><p class="mt-3 text-sm leading-6 text-neutral-600">{stat.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="bg-[var(--night)] py-24 text-[#f1e7d9] md:py-32">
+  <div class="shell grid gap-10 lg:grid-cols-12">
+    <figure class="lg:col-span-7">
+      <div class="arch-border border-white/15"><img src={PHOTOS.stage} alt={c.architecture.stageAlt} class="aspect-[5/4] object-cover" loading="lazy" /></div>
+    </figure>
+    <div class="self-center lg:col-span-5 lg:pl-8">
+      <p class="eyebrow !text-[#df9e77]">{c.architecture.eyebrow}</p>
+      <h2 class="display mt-4 text-5xl leading-[.95] md:text-7xl">{c.architecture.titlePlain} <em class="text-[#d4ad80]">{c.architecture.titleAccent}</em></h2>
+      <p class="mt-7 max-w-xl leading-7 text-white/65">{c.architecture.body}</p>
+      <div class="mt-9 border-t border-white/15 pt-6 text-sm leading-7 text-white/55"><strong class="text-white/85">{c.architecture.noteLabel}</strong> {c.architecture.noteBody}</div>
+    </div>
+  </div>
+</section>
+
+<section id={sectionIds.visit} class="shell py-24 md:py-32">
+  <div class="max-w-3xl">
+    <p class="eyebrow">{c.visit.eyebrow}</p>
+    <h2 class="section-title mt-4">{c.visit.title}</h2>
+  </div>
+  <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+    {c.visit.cards.map((card) => (
+      <article class="stone-card p-7"><span class="eyebrow">{card.label}</span><h3 class="display mt-3 text-3xl">{card.title}</h3><p class="mt-3 text-sm leading-6 text-neutral-600">{card.body}</p></article>
+    ))}
+  </div>
+  <aside class="mt-6 border-l-2 border-[var(--terracotta)] bg-white/45 p-5 text-sm leading-7 text-neutral-700"><strong>{c.visit.noteLabel}</strong> {c.visit.noteBody}</aside>
+</section>
+
+<section id={sectionIds.route} class="border-y border-[var(--line)] bg-white/35 py-24 md:py-32">
+  <div class="shell grid gap-14 lg:grid-cols-[.85fr_1.15fr]">
+    <div class="lg:sticky lg:top-10 lg:self-start">
+      <p class="eyebrow">{c.route.eyebrow}</p><h2 class="section-title mt-4">{c.route.title}</h2>
+      <p class="prose-copy mt-7 max-w-lg">{c.route.lead}</p>
+    </div>
+    <div class="space-y-10">
+      {c.route.steps.map((step, i) => (
+        <article class="route-step" data-step={String(i + 1).padStart(2, '0')}><h3 class="display text-3xl">{step.title}</h3><p class="prose-copy mt-3">{step.body}</p></article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="shell py-24 md:py-32">
+  <div class="grid gap-8 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <p class="eyebrow">{c.photos.eyebrow}</p><h2 class="section-title mt-4">{c.photos.title}</h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 lg:col-span-7">
+      {c.photos.cards.map((card) => (
+        <article class="stone-card p-7"><b class="display text-2xl">{card.title}</b><p class="mt-3 text-sm leading-6 text-neutral-600">{card.body}</p></article>
+      ))}
+    </div>
+  </div>
+  <figure class="mt-12 overflow-hidden rounded-[2rem]">
+    <img src={PHOTOS.detail} alt={c.photos.detailAlt} class="aspect-[16/7] object-cover" loading="lazy" />
+  </figure>
+</section>
+
+<section id={sectionIds.transport} class="bg-[#d8c3a3] py-24 md:py-32">
+  <div class="shell">
+    <p class="eyebrow">{c.transport.eyebrow}</p><h2 class="section-title mt-4 max-w-4xl">{c.transport.title}</h2>
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {c.transport.modes.map((mode) => (
+        <article class="border-t border-black/20 pt-5"><h3 class="display text-3xl">{mode.title}</h3><p class="mt-4 text-sm leading-7 text-black/65">{mode.body}</p></article>
+      ))}
+    </div>
+    <div class="mt-12 stone-card overflow-hidden !bg-[#f2e8d8]">
+      <iframe src={ATTRACTION.mapSrc} class="map-frame" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title={c.transport.mapTitle}></iframe>
+    </div>
+    <div class="mt-5 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm text-black/60">
+      <span><strong>{c.transport.addressLabel}</strong> {ATTRACTION.addressLine}</span>
+      <span><strong>{c.transport.plusCodeLabel}</strong> {ATTRACTION.plusCode}</span>
+      <a href={ATTRACTION.mapsUrl} target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#1a1815] px-5 py-2 text-xs font-bold text-white no-underline hover:bg-black">{c.transport.ctaMap}</a>
+    </div>
+  </div>
+</section>
+
+<section class="shell py-24 md:py-32">
+  <div class="grid gap-12 lg:grid-cols-2">
+    <div>
+      <p class="eyebrow">{c.practical.parking.label}</p><h2 class="display mt-4 text-5xl md:text-6xl">{c.practical.parking.title}</h2>
+      <p class="prose-copy mt-6">{c.practical.parking.body}</p>
+    </div>
+    <div>
+      <p class="eyebrow">{c.practical.bestTime.label}</p><h2 class="display mt-4 text-5xl md:text-6xl">{c.practical.bestTime.title}</h2>
+      <p class="prose-copy mt-6">{c.practical.bestTime.body}</p>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-[var(--line)] bg-white/35 py-24 md:py-32">
+  <div class="shell">
+    <div class="grid gap-10 lg:grid-cols-[.65fr_1.35fr]">
+      <div><p class="eyebrow">{c.surroundings.eyebrow}</p><h2 class="section-title mt-4">{c.surroundings.title}</h2></div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {c.surroundings.cards.map((card) => (
+          <article class="stone-card p-7"><span class="eyebrow">{card.label}</span><h3 class="display mt-3 text-3xl">{card.title}</h3><p class="mt-3 text-sm leading-6 text-neutral-600">{card.body}</p></article>
+        ))}
+      </div>
+    </div>
+    <figure class="mt-12 overflow-hidden rounded-[2rem]">
+      <img src={PHOTOS.aqueduct} alt={c.surroundings.aqueductAlt} class="aspect-[16/7] object-cover" loading="lazy" />
+      <figcaption class="photo-caption px-3">{c.surroundings.aqueductCaption}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="shell py-24 md:py-32">
+  <div class="grid gap-14 lg:grid-cols-2">
+    <div>
+      <p class="eyebrow">{c.foodStay.food.eyebrow}</p><h2 class="display mt-4 text-5xl md:text-6xl">{c.foodStay.food.title}</h2>
+      <div class="mt-8 space-y-5 text-sm leading-7 text-neutral-700">
+        {c.foodStay.food.items.map((item) => (
+          <p><strong>{item.title}:</strong> {item.body}</p>
+        ))}
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">{c.foodStay.stay.eyebrow}</p><h2 class="display mt-4 text-5xl md:text-6xl">{c.foodStay.stay.title}</h2>
+      <div class="mt-8 space-y-5 text-sm leading-7 text-neutral-700">
+        {c.foodStay.stay.items.map((item) => (
+          <p><strong>{item.title}:</strong> {item.body}</p>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id={sectionIds.sources} class="bg-[#e8dcc8] py-24 md:py-32">
+  <div class="shell">
+    <p class="eyebrow">{c.sources.eyebrow}</p>
+    <h2 class="section-title mt-4 max-w-3xl">{c.sources.title}</h2>
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      {c.sources.items.map((source) => (
+        <article class="stone-card flex flex-col !bg-[#f2e8d8] p-7">
+          <h3 class="display text-2xl leading-tight">{source.name}</h3>
+          <p class="mt-3 flex-1 text-sm leading-6 text-neutral-600">{source.note}</p>
+          <a href={source.href} target="_blank" rel="noopener noreferrer" class="mt-4 text-sm font-bold text-[var(--terracotta)] underline decoration-[var(--terracotta)]/30 underline-offset-4">{c.sources.cta}</a>
+        </article>
+      ))}
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      <aside class="border-l-2 border-[var(--terracotta)] bg-white/45 p-5 text-sm leading-7 text-neutral-700">
+        <strong>{c.sources.freshnessLabel}</strong> {c.sources.freshnessBody}
+      </aside>
+      <aside class="border-l-2 border-[var(--olive)] bg-white/45 p-5 text-sm leading-7 text-neutral-700">
+        <strong>{c.sources.creditLabel}</strong> {c.sources.creditBody}
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id={sectionIds.faq} class="bg-[#221e19] py-24 text-[#f4eadc] md:py-32">
+  <div class="shell grid gap-12 lg:grid-cols-[.55fr_1.45fr]">
+    <div><p class="eyebrow !text-[#dfa17c]">{c.faq.eyebrow}</p><h2 class="display mt-4 text-5xl md:text-6xl">{c.faq.title}</h2></div>
+    <div class="divide-y divide-white/12 border-y border-white/12">
+      {c.faq.items.map((item, i) => (
+        <details class="group py-6" open={i === 0}>
+          <summary class="flex cursor-pointer list-none items-start justify-between gap-6 font-semibold"><span>{item.q}</span><span class="text-2xl font-light text-[#dda27e] group-open:rotate-45">+</span></summary>
+          <p class="mt-4 max-w-3xl pr-10 text-sm leading-7 text-white/60">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
