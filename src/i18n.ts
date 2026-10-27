@@ -63,7 +63,7 @@ export function localizedPath(locale: Locale, path: string): string {
 /** '/en/' veya '/de/' önekini yoldan kaldırır. */
 export function stripLocale(path: string): string {
   const match = /^\/(en|de)(\/|$)/.exec(path);
-  if (!match) return path;
+  if (!match?.[1]) return path;
   const rest = path.slice(match[1].length + 1);
   return rest === '' ? '/' : rest;
 }
@@ -76,7 +76,7 @@ export function localeHref(locale: Locale, path: string): string {
 
 /**
  * Sayfa için hreflang eşdeğerleri.
- * x-default, çoğunluk trafiğin geldiği Türkçe kök sürümü gösterir.
+ * x-default, varsayılan Türkçe kök sürümü gösterir.
  */
 export function hreflangAlternates(
   path: string,

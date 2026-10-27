@@ -1,386 +1,368 @@
 import type { SiteContent } from './types';
-
 export const tr: SiteContent = {
-  meta: {
-    title:
-      'Aspendos Antik Tiyatrosu Serik — Gezi Rehberi | 2026 Ziyaret Saatleri, Bilet Ücreti, Ulaşım ve Konum',
-    description:
-      'Aspendos Antik Tiyatrosu (Serik, Antalya) nerede, saat kaçta açık, giriş ücreti ne kadar, nasıl gidilir? Güncel ziyaret saatleri, bilet, ulaşım, otopark, gezi rotası ve Perge–Side çevre rehberi.',
-    ogTitle: 'Aspendos Antik Tiyatrosu | Serik, Antalya Gezi Rehberi',
-    ogDescription:
-      'Tarih, mimari, ziyaret saatleri, bilet ücreti, ulaşım ve konum: Roma dünyasının en iyi korunmuş tiyatrosu Aspendos Antik Tiyatrosu için kapsamlı rehber.',
+  "meta": {
+    "title": "Aspendos Antik Tiyatrosu, Serik Antalya: ziyaret bilgileri ve harita",
+    "description": "Belkıs’taki Aspendos Tiyatrosu: Bakanlık ve Maps saat farkı, teyit edilecek bilet koşulları, ulaşım planı, kaynaklı tarih ve geçmiş yılların fotoğrafları.",
+    "ogTitle": "Aspendos Antik Tiyatrosu, Serik Antalya: ziyaret bilgileri ve harita",
+    "ogDescription": "Belkıs’taki Aspendos Tiyatrosu: Bakanlık ve Maps saat farkı, teyit edilecek bilet koşulları, ulaşım planı, kaynaklı tarih ve geçmiş yılların fotoğrafları."
   },
-  nav: {
-    history: 'Tarih',
-    visit: 'Ziyaret',
-    transport: 'Ulaşım',
-    route: 'Rota',
-    sources: 'Kaynaklar',
-    faq: 'SSS',
+  "nav": {
+    "history": "Tarih",
+    "visit": "Ziyaret",
+    "transport": "Ulaşım",
+    "route": "Rota",
+    "sources": "Kaynaklar",
+    "faq": "SSS"
   },
-  hero: {
-    badges: {
-      period: 'Roma Dönemi',
-      heritage: 'UNESCO Geçici Liste',
-      rating: 'Google 4,8 · 22.886 yorum',
+  "hero": {
+    "badges": {
+      "period": "Roma Dönemi",
+      "heritage": "UNESCO Geçici Liste",
+      "rating": "Maps 4,8 · 23.143 · 26 Ekim 2026"
     },
-    titleLead: 'Aspendos Antik',
-    titleAccent: 'Tiyatrosu',
-    tagline: '“Taşın içindeki ses.”',
-    lead:
-      'İki katlı sahne binası ve güçlü akustiğiyle Aspendos Theatre olarak da bilinen bu yapı, Marcus Aurelius döneminden bugüne ayakta kalan, Akdeniz dünyasının en etkileyici Roma tiyatrolarından biri.',
-    ctaMap: 'Konum ↗',
-    ctaPlan: 'Ziyareti planla ↓',
-    imageAlt:
-      'Aspendos Antik Tiyatrosu – Roma tiyatrosunun yarım daire caveası ve sahne binası, Serik, Antalya',
+    "titleLead": "Aspendos Antik",
+    "titleAccent": "Tiyatrosu",
+    "tagline": "“Taşın içindeki ses.”",
+    "lead": "İki katlı sahne binası ve güçlü akustiğiyle Aspendos Theatre olarak da bilinen bu yapı, Marcus Aurelius döneminden bugüne ayakta kalan, Akdeniz dünyasının en etkileyici Roma tiyatrolarından biri.",
+    "ctaMap": "Konum ↗",
+    "ctaPlan": "Ziyareti planla ↓",
+    "imageAlt": "Aspendos Antik Tiyatrosu – Roma tiyatrosunun yarım daire caveası ve sahne binası, Serik, Antalya"
   },
-  facts: [
+  "facts": [
     {
-      label: 'Gündüz saatleri',
-      title: '08.00–18.45',
-      body: 'Resmî Müze sayfasında her gün için listelenen gündüz ziyaret aralığı.',
+      "label": "Bakanlık sayfası",
+      "title": "08.00–19.00",
+      "body": "26 Ekim 2026’da okundu; gişe 18.30. Sayfada güncelleme tarihi görünmüyor."
     },
     {
-      label: 'Yabancı ziyaretçi',
-      title: '15 €',
-      body: 'Resmî 2026 giriş tarifesi. T.C. vatandaşları için MüzeKart geçerlidir.',
+      "label": "Maps kaydı",
+      "title": "08.00–22.00",
+      "body": "26 Ekim 2026’da kontrol edilen üçüncü taraf günlük listesi; müze veya gösteri giriş garantisi değildir."
     },
     {
-      label: 'Google puanı',
-      title: '4,8 / 5',
-      body: 'Google Haritalar’daki 22.886 değerlendirmeye göre (Eylül 2026 anlık görüntüsü).',
+      "label": "Google Maps",
+      "title": "4,8 / 5",
+      "body": "26 Ekim 2026 kaydında 23.143 değerlendirme; rehberin kendi puanlaması değildir."
     },
     {
-      label: 'Önerilen süre',
-      title: '1,5–2,5 saat',
-      body: 'Tiyatroya akropol ve su kemerleri de eklenirse rahat tempoda gereken süre.',
-    },
+      "label": "Giriş",
+      "title": "Tarifeyi teyit edin",
+      "body": "Okunan birincil sayfalarda güncel sayısal ücret doğrulanmadı. Kategori, muafiyet ve ayrı etkinlik biletini sorun."
+    }
   ],
-  crumbs: ['Türkiye', 'Antalya', 'Serik', 'Aspendos Antik Tiyatrosu'],
-  story: {
-    eyebrow: 'M.S. 2. yüzyıl',
-    titlePrefix: 'Bir tiyatrodan fazlası: ',
-    titleAccent: 'korunmuş bir kent hafızası.',
-    paragraphs: [
-      'Aspendos Antik Tiyatrosu (İngilizce kaynaklarda Aspendos Theatre), Antalya’nın Serik ilçesindeki Belkıs yakınlarında yer alan antik Aspendos kentinin anıtsal yapısıdır. Marcus Aurelius döneminde yaklaşık M.S. 160–180 arasında inşa edildi. UNESCO’nun Geçici Liste dosyası mimarı Teodoros’un oğlu Zenon olarak kaydeder; yapının inşası Curtius ailesinden iki kardeşin bağışıyla ilişkilidir.',
-      'Doğu akropol yamacına yaslanan yarım daire cavea ile karşısında neredeyse bütünüyle ayakta duran iki katlı sahne binası, yapıyı benzersiz kılar. Üst sırayı dolaşan tonozlu galeri seyirci hareketini düzenlerken, sahne duvarı Roma tiyatrosunun görkemli mimari perdesini hâlâ okunabilir durumda tutar.',
-      '13. yüzyılda Selçuklu döneminde onarılan ve saray işleviyle yeniden kullanılan sahne yapısı, tiyatronun olağanüstü ölçüde korunmasına katkıda bulundu. Bugün Aspendos yalnızca antik bir gösteri mekânı değil; Roma’dan Selçuklu’ya uzanan katmanlı bir mimarlık belgesi ve Pamphylia bölgesinin en güçlü açık hava sahnesidir.',
+  "crumbs": [
+    "Türkiye",
+    "Antalya",
+    "Serik",
+    "Aspendos Antik Tiyatrosu"
+  ],
+  "story": {
+    "eyebrow": "M.S. 2. yüzyıl",
+    "titlePrefix": "Bir tiyatrodan fazlası: ",
+    "titleAccent": "korunmuş bir kent hafızası.",
+    "paragraphs": [
+      "Aspendos Antik Tiyatrosu (İngilizce kaynaklarda Aspendos Theatre), Antalya’nın Serik ilçesindeki Belkıs yakınlarında yer alan antik Aspendos kentinin anıtsal yapısıdır. Marcus Aurelius döneminde yaklaşık M.S. 160–180 arasında inşa edildi. UNESCO’nun Geçici Liste dosyası mimarı Teodoros’un oğlu Zenon olarak kaydeder; yapının inşası Curtius ailesinden iki kardeşin bağışıyla ilişkilidir.",
+      "Doğu akropol yamacına yaslanan yarım daire cavea ile karşısında neredeyse bütünüyle ayakta duran iki katlı sahne binası, yapıyı benzersiz kılar. Üst sırayı dolaşan tonozlu galeri seyirci hareketini düzenlerken, sahne duvarı Roma tiyatrosunun görkemli mimari perdesini hâlâ okunabilir durumda tutar.",
+      "Devletin UNESCO Geçici Liste dosyası 13. yüzyıldaki Selçuklu onarımını ve saray olarak yeniden kullanımı anlatır. Bu katmanlar sahne yapısının korunmasını açıklamaya yardımcı olur. Dosya tarihî kaynaktır; bugünkü etkinlik veya giriş duyurusu değildir."
     ],
-    stats: [
+    "stats": [
       {
-        label: 'Cavea',
-        title: '20 + 21',
-        body: 'Alt ve üst oturma bölümleri, diazoma adı verilen yatay dolaşım hattıyla ayrılır.',
+        "label": "Cavea",
+        "title": "20 + 21",
+        "body": "Alt ve üst oturma bölümleri, diazoma adı verilen yatay dolaşım hattıyla ayrılır."
       },
       {
-        label: 'Sahne cephesi',
-        title: '≈ 100 m',
-        body: 'Yaklaşık yüz metre genişliğindeki anıtsal cephe, iki kat boyunca mimari bezemeyi taşır.',
-      },
+        "label": "Sahne cephesi",
+        "title": "≈ 100 m",
+        "body": "Yaklaşık yüz metre genişliğindeki anıtsal cephe, iki kat boyunca mimari bezemeyi taşır."
+      }
     ],
-    figureCaption:
-      'Cavea ile sahne arasındaki sıkı ilişki, sesin ve bakışın tek bir merkezde toplanmasını sağlar.',
-    interiorAlt: 'Aspendos Antik Tiyatrosu taş oturma sıraları ve sahne yapısı – iç görünüm',
+    "figureCaption": "Cavea ile sahne arasındaki sıkı ilişki, sesin ve bakışın tek bir merkezde toplanmasını sağlar.",
+    "interiorAlt": "Aspendos Antik Tiyatrosu taş oturma sıraları ve sahne yapısı – iç görünüm"
   },
-  architecture: {
-    eyebrow: 'Mimariyi oku',
-    titlePlain: 'Sahne binası hâlâ “duvar” değil, bir ',
-    titleAccent: 'cephe kompozisyonu.',
-    body:
-      'Kapılar, nişler, frizler, konsollar ve alınlıklar sahne arkasını iki katlı bir mimari fon gibi kurar. Yakından baktığınızda taş yüzeydeki Roma dekorasyonu ile Selçuklu döneminin onarım izlerini aynı yapıda okuyabilirsiniz.',
-    noteLabel: 'Akustik deneyi:',
-    noteBody:
-      'Ziyaretçi yoğunluğu düşükken orkestraya yakın bir noktada normal konuşma sesiyle deneme yapın; yüksek sesle bağırmak yerine yapının doğal yankısını dinleyin.',
-    stageAlt: 'Aspendos Antik Tiyatrosu iki katlı sahne cephesi, Serik, Antalya',
+  "architecture": {
+    "eyebrow": "Mimariyi oku",
+    "titlePlain": "Sahne binası hâlâ “duvar” değil, bir ",
+    "titleAccent": "cephe kompozisyonu.",
+    "body": "Kapılar, nişler, frizler, konsollar ve alınlıklar sahne arkasını iki katlı bir mimari fon gibi kurar. Yakından baktığınızda taş yüzeydeki Roma dekorasyonu ile Selçuklu döneminin onarım izlerini aynı yapıda okuyabilirsiniz.",
+    "noteLabel": "Akustik deneyi:",
+    "noteBody": "İzinli ziyaretçi alanlarında sessizce gözlemleyin ve görevlilerin yönlendirmesine uyun. Bu rehber akustik deneme ya da sahneye çıkış izni doğrulamaz.",
+    "stageAlt": "Aspendos Antik Tiyatrosu iki katlı sahne cephesi, Serik, Antalya"
   },
-  visit: {
-    eyebrow: 'Ziyaret bilgileri',
-    title: 'Güneşi, taşı ve kalabalığı hesaba katan plan.',
-    cards: [
+  "visit": {
+    "eyebrow": "Ziyaret bilgileri",
+    "title": "Güneşi, taşı ve kalabalığı hesaba katan plan.",
+    "cards": [
       {
-        label: 'Açılış',
-        title: '08.00',
-        body: 'Resmî Müze sayfasında her gün için listelenen gündüz açılış saati.',
+        "label": "Bakanlık sayfası",
+        "title": "08.00–19.00",
+        "body": "26 Ekim’de okunan müze kaydı; görünür güncelleme tarihi yok."
       },
       {
-        label: 'Kapanış',
-        title: '18.45',
-        body: 'Sezon, özel etkinlik veya bakım nedeniyle değişebilir; aynı gün tekrar kontrol edin.',
+        "label": "Gişe",
+        "title": "18.30",
+        "body": "Aynı sayfadaki gişe kapanış saati. Son kabul ve o günün kısıtlarını ayrıca doğrulayın."
       },
       {
-        label: 'Bilet / ücret',
-        title: '15 €',
-        body: 'Resmî yabancı ziyaretçi tarifesi. T.C. vatandaşları için MüzeKart geçerlidir.',
+        "label": "Ücret",
+        "title": "Doğrudan sorun",
+        "body": "Güncel sayısal tarife doğrulanmadı. Eski bir ücret listesi veya tur satışı herkese geçerli bugünkü ücret sayılmaz."
       },
       {
-        label: 'Süre',
-        title: '1,5–2,5 sa.',
-        body: 'Tiyatro + akropol + su yapıları için rahat tempoda önerilen aralık.',
-      },
+        "label": "Plan",
+        "title": "Kapsamı seçin",
+        "body": "Yalnız tiyatro ya da ayrıca antik kent ve su kemerleri: açık alanlara, hareket gereksiniminize ve gerçek güzergâha göre karar verin."
+      }
     ],
-    noteLabel: 'Not:',
-    noteBody:
-      'Gece müzeciliği ve sahne etkinlikleri dönemsel uygulanabilir. Normal gündüz ziyareti ile etkinlik bileti/saatini birbirine karıştırmayın; güncel bilgi için Kültür ve Turizm Bakanlığı Müze kanalını esas alın.',
+    "noteLabel": "Not:",
+    "noteBody": "26 Ekim 2026 kontrolü: Bakanlık müze sayfasında 08.00–19.00, gişe kapanışı 18.30; Maps’te her gün 08.00–22.00 yazıyor. Bunlar etkinlik bileti veya geç giriş garantisi değildir. Yola çıkmadan müzeden güncel kabul koşullarını öğrenin."
   },
-  route: {
-    eyebrow: 'Yürüyüş rotası',
-    title: 'Tiyatroyu tek başına görüp dönmeyin.',
-    lead:
-      'Aspendos’un değeri, sahne binasının arkasında devam eden antik kent dokusu ve kuzeye uzanan su sistemiyle birlikte daha iyi anlaşılır.',
-    steps: [
+  "route": {
+    "eyebrow": "Yürüyüş rotası",
+    "title": "Açık ve uygun alanları ayrı ayrı seçin.",
+    "lead": "Bunlar ayrı değerlendirme duraklarıdır; kesintisiz veya tümüyle erişilebilir bir gezi devresi garantisi değildir. Açık alanları, zemini ve zamanınızı öğrenerek ekleyin.",
+    "steps": [
       {
-        title: 'Sahne cephesi ve orchestra',
-        body: 'Önce zeminden başlayın. Beş kapıyı, iki katlı cephe düzenini ve taş dekorasyonun ölçeğini yakından okuyun.',
+        "title": "Sahne cephesi ve orchestra",
+        "body": "Alan açıksa ve izin veriliyorsa sahne cephesini ve orkestrayı ziyaretçi alanından gözlemleyin. Kısıtlı gösteri alanlarına girmeyin."
       },
       {
-        title: 'Cavea ve üst galeri',
-        body: 'Oturma sıralarını kontrollü biçimde yükselerek tiyatronun yarım daire geometrisini görün. Üst kot, sahne–kent–peyzaj ilişkisini anlamak için en güçlü bakışlardan biridir.',
+        "title": "Cavea ve üst galeri",
+        "body": "Oturma sıralarını ve üst galeriyi yalnız izin verilen, dengenize ve hareket gereksiniminize uygun bölümlerde kullanın. Tarihî basamaklar tekerlekli sandalye rotası kanıtı değildir."
       },
       {
-        title: 'Akropol: agora, bazilika ve anıtsal yapılar',
-        body: 'Tiyatronun arkasındaki yükseltiye devam edin. Aspendos Antik Kenti’nin yalnızca bir tiyatrodan ibaret olmadığını, kamusal yaşamın farklı yapılarla örgütlendiğini burada görürsünüz.',
+        "title": "Akropol: agora, bazilika ve anıtsal yapılar",
+        "body": "Dosya agora, bazilika ve başka antik kent kalıntılarını anlatır. Tiyatro dışına devam etmeden gerçek patikayı ve açık bölgeleri sorun."
       },
       {
-        title: 'Su kemerleri',
-        body: 'Vaktiniz varsa Roma su mühendisliğinin en dikkat çekici bölümlerinden olan kemer ve sifon sistemini rotaya ekleyin. Aspendos’un UNESCO Geçici Liste dosyasında tiyatroyla birlikte öne çıkarılmasının nedeni budur.',
+        "title": "Su kemerleri",
+        "body": "Su kemerleri ayrı bir yakın yapıdır. Güzergâhı, izinli bakış noktalarını ve dönüşü kontrol edin; tiyatro bileti veya eski fotoğraf oraya giriş kanıtı değildir."
+      }
+    ]
+  },
+  "photos": {
+    "eyebrow": "Fotoğraf noktaları",
+    "title": "En iyi kare, yapının geometrisini gösterir.",
+    "cards": [
+      {
+        "title": "Üst cavea",
+        "body": "Geniş kadraj oturma sıralarıyla sahneyi birleştirebilir; yalnız izinli ve size uygun ziyaretçi noktalarını kullanın."
       },
+      {
+        "title": "Sahne kapıları",
+        "body": "Kapı çerçevelerini izinli alanlardan, diğer ziyaretçilerin geçişini kapatmadan inceleyin."
+      },
+      {
+        "title": "Dış cephe kemerleri",
+        "body": "Dış kemerler taş örgüyü gösterir; tarihî fotoğraf bugünkü giriş yönlendirmesi değildir."
+      },
+      {
+        "title": "Sabah / geç öğleden sonra",
+        "body": "Işığı ve zamanı teyit edilmiş ziyaret saatleri içinde değerlendirin. Gün batımı girişi veya sakin ortam varsaymayın."
+      }
     ],
+    "detailAlt": "Aspendos Antik Tiyatrosu dış cephe kemer ve taş detayları"
   },
-  photos: {
-    eyebrow: 'Fotoğraf noktaları',
-    title: 'En iyi kare, yapının geometrisini gösterir.',
-    cards: [
+  "transport": {
+    "eyebrow": "Detaylı ulaşım",
+    "title": "Belkıs, Serik, Antalya’daki tiyatroya gelişinizi planlayın.",
+    "modes": [
       {
-        title: 'Üst cavea',
-        body: 'Yarım daire oturma düzeni, orchestra ve sahne cephesini tek karede toplamak için en güçlü açı. Geniş açı lens burada işe yarar.',
+        "title": "Araç / taksi",
+        "body": "Hedefi Belkıs, Serik, Antalya’daki Aspendos Tiyatrosu olarak seçin. Güncel yolu ve yasal indirme noktasını şoförle kontrol edip dönüşü ayrıca düzenleyin; sabit havalimanı mesafesi veya süre vaat edilmez."
       },
       {
-        title: 'Sahne kapıları',
-        body: 'Kapı açıklıklarını çerçeve olarak kullanıp taş yüzeyin katmanlarını ve insan ölçeğini birlikte yakalayın.',
+        "title": "Toplu taşıma",
+        "body": "Güncel hat ve bağlantıları işletmeciden öğrenin. Belkıs minibüsünün bugünkü saat, ücret ve son seferi doğrulanmadı; son etabı ve dönüşü çıkmadan teyit edin."
       },
       {
-        title: 'Dış cephe kemerleri',
-        body: 'Daha az bilinen dış dolaşım yüzeyi, kemer ritmini ve Roma mühendisliğini belirgin biçimde gösterir.',
-      },
-      {
-        title: 'Sabah / geç öğleden sonra',
-        body: 'Daha alçak güneş, taş kabartıların gölgelerini artırır. Yaz ortasında öğle ışığı sert ve sıcak olabilir.',
-      },
+        "title": "Tur / transfer",
+        "body": "Gerçek programı, örenyeri girişini, gösteri biletini ve durak sürelerini inceleyin. Perge, Side ve kanyon ayrı yerlerdir; her birleşimin bir güne sığacağını varsaymayın."
+      }
     ],
-    detailAlt: 'Aspendos Antik Tiyatrosu dış cephe kemer ve taş detayları',
+    "addressLabel": "Adres:",
+    "plusCodeLabel": "Plus Code:",
+    "ctaMap": "Google Haritalar’da aç ↗",
+    "mapTitle": "Aspendos Antik Tiyatrosu Google Haritası – Serik, Antalya"
   },
-  transport: {
-    eyebrow: 'Detaylı ulaşım',
-    title: 'Serik’in yaklaşık 8 km doğusunda, D400 koridorundan ayrılan Aspendos Yolu üzerinde.',
-    modes: [
-      {
-        title: 'Özel araç / taksi',
-        body: 'Antalya yönünden D400 üzerinde Serik’e ilerleyip Aspendos tabelalarını takip edin. Antalya Havalimanı–Aspendos karayolu mesafesi yaklaşık 40 km düzeyindedir; trafik süreyi belirgin biçimde değiştirebilir.',
-      },
-      {
-        title: 'Toplu taşıma',
-        body: 'Antalya’dan önce Serik merkezine ulaşın. Serik’ten Belkıs/Aspendos yönü için güncel yerel minibüs bağlantısını sorun veya son bölümü taksiyle tamamlayın. Dönüş saatini özellikle akşamüstü önceden netleştirin.',
-      },
-      {
-        title: 'Tur / transfer',
-        body: 'Perge–Aspendos–Side kombinasyonları günü verimli kullanır. Ancak rehberli turda tiyatro dışındaki akropol ve su kemerine ayrılan sürenin programa dâhil olup olmadığını kontrol edin.',
-      },
-    ],
-    addressLabel: 'Adres:',
-    plusCodeLabel: 'Plus Code:',
-    ctaMap: 'Google Haritalar’da aç ↗',
-    mapTitle: 'Aspendos Antik Tiyatrosu Google Haritası – Serik, Antalya',
-  },
-  practical: {
-    parking: {
-      label: 'Otopark',
-      title: 'Aracı giriş çevresinde bırakın; antik kent içinde yürümeye hazırlanın.',
-      body: 'Örenyeri girişinin yakınında ziyaretçi araçları için park alanları bulunur. Yoğun sezon ve etkinlik günlerinde yer hızlı dolabileceğinden sabah erken gelmek avantajlıdır. Park düzeni ve ücretlendirme dönemsel değişebileceği için sabit bir ücret belirtmiyoruz.',
+  "practical": {
+    "parking": {
+      "label": "Otopark",
+      "title": "Otopark ve indirme koşullarını kontrol edin.",
+      "body": "Bu rehber güncel, özel ziyaretçi otoparkı düzenini doğrulamamıştır. Yasal indirme noktası, erişilebilir geliş ve ücretleri müzeye sorun; kapıda yer varsaymayın."
     },
-    bestTime: {
-      label: 'En iyi zaman',
-      title: 'Işığın taş üzerinde yana düştüğü saatleri seçin.',
-      body: 'İlkbahar ve sonbahar yürüyüş için daha dengeli sıcaklıklar sunar. Yazın sabah açılışa yakın saatler veya geç öğleden sonra hem sıcaklık hem fotoğraf ışığı açısından daha rahattır. Şapka, su ve tabanı iyi tutan ayakkabı getirin.',
-    },
+    "bestTime": {
+      "label": "En iyi zaman",
+      "title": "Gerçek koşullara ve teyit edilen saatlere göre planlayın.",
+      "body": "Yerel tahmini, sıcaklığı, yağmuru ve hareket gereksiniminizi kontrol edin. Uygun ayakkabı ve gerektiğinde su alın; güvenli patika, sakin dönem veya tam gezi süresi garanti edilmez."
+    }
   },
-  surroundings: {
-    eyebrow: 'Yakın çevre',
-    title: 'Bir güne sığan Pamphylia katmanları.',
-    cards: [
+  "surroundings": {
+    "eyebrow": "Yakın çevre",
+    "title": "Gezinin başka bölümleri için ayrı seçenekler.",
+    "cards": [
       {
-        label: 'Antik kent',
-        title: 'Perge',
-        body: 'Sütunlu caddeleri, agora ve stadyumuyla Aspendos’un tiyatro merkezli deneyimini tamamlayan güçlü bir Roma kenti.',
+        "label": "Antik kent",
+        "title": "Perge",
+        "body": "Turizm portalında geçen ayrı bir örenyeridir. Kendi saat, bilet ve ulaşım koşullarını kontrol edin."
       },
       {
-        label: 'Kıyı & tarih',
-        title: 'Side',
-        body: 'Antik tiyatro, kent kalıntıları ve deniz kıyısındaki Apollon Tapınağı ile gün batımına uzatılabilecek bir rota.',
+        "label": "Kıyı & tarih",
+        "title": "Side",
+        "body": "Ayrı bir kıyı ve arkeoloji durağıdır; gün batımı ziyaretini varsaymadan saatleri ve dönüşü inceleyin."
       },
       {
-        label: 'Doğa',
-        title: 'Köprülü Kanyon',
-        body: 'Köprüçay vadisinde yürüyüş, manzara ve rafting seçenekleri. Aspendos’un nehir sistemiyle tarihsel bağını coğrafyada hissettirir.',
+        "label": "Doğa",
+        "title": "Köprülü Kanyon",
+        "body": "Ayrı bir doğa alanıdır. Rafting gibi faaliyetlerin kendi işletmecisi, koşulları ve düzeni gerekir; tiyatro ziyaretine dahil değildir."
       },
       {
-        label: 'Kent molası',
-        title: 'Serik',
-        body: 'Yakıt, yemek ve temel ihtiyaçlar için en pratik merkez; Aspendos’a yaklaşık 8 km uzaklıkta.',
-      },
+        "label": "Kent molası",
+        "title": "Serik",
+        "body": "Müze adresinde adı geçen ilçedir. Yakıt, yemek veya diğer belirli hizmetleri doğrudan doğrulayın; güncel işletme listesi sunulmuyor."
+      }
     ],
-    aqueductCaption:
-      'Aspendos’un su kemerleri, UNESCO Geçici Liste dosyasında tiyatroyla birlikte değerlendirilir.',
-    aqueductAlt: 'Aspendos Antik Tiyatrosu yakınındaki Aspendos su kemerleri',
+    "aqueductCaption": "Aspendos’un su kemerleri, UNESCO Geçici Liste dosyasında tiyatroyla birlikte değerlendirilir.",
+    "aqueductAlt": "Aspendos Antik Tiyatrosu yakınındaki Aspendos su kemerleri"
   },
-  foodStay: {
-    food: {
-      eyebrow: 'Yakınlarda ne yenir?',
-      title: 'Turistik mola yerine bölgenin ritmini takip edin.',
-      items: [
+  "foodStay": {
+    "food": {
+      "eyebrow": "Yakınlarda ne yenir?",
+      "title": "Yemek durağı seçmeden yapılacak kontroller.",
+      "items": [
         {
-          title: 'Serik merkez',
-          body: 'Pide, şiş/köfte ve Antalya usulü piyaz için daha fazla yerel seçenek bulunur. Tiyatro çevresine göre fiyat ve menü karşılaştırması yapmak daha kolaydır.',
+          "title": "Serik merkez",
+          "body": "İşletmenin açık adresini, o günkü saatini ve menüsünü doğrulayın; güncel restoran listesi teyit edilmemiştir."
         },
         {
-          title: 'Köprüçay yönü',
-          body: 'Kanyon rotasıyla birleştiriyorsanız alabalık ve ızgara ağırlıklı nehir kenarı işletmeleri günün ikinci yarısı için doğal bir mola oluşturur.',
+          "title": "Köprüçay yönü",
+          "body": "Beslenme gereksinimi, fiyat ve rezervasyon koşullarını işletmeden öğrenin."
         },
         {
-          title: 'Belek yönü',
-          body: 'Akşam yemeğinde daha geniş restoran ve otel seçeneği isteyenler için sahil hattı pratiktir.',
-        },
-      ],
+          "title": "Belek yönü",
+          "body": "Gerçek güzergâhı ve dönüşü hesaba katın; haritadaki yakınlık müsait hizmet anlamına gelmez."
+        }
+      ]
     },
-    stay: {
-      eyebrow: 'Nerede kalınır?',
-      title: 'Gezi biçimine göre üç üs.',
-      items: [
+    "stay": {
+      "eyebrow": "Nerede kalınır?",
+      "title": "Konaklama üssünü gerçek programla karşılaştırın.",
+      "items": [
         {
-          title: 'Serik',
-          body: 'Aspendos’a en yakın, ulaşım odaklı ve pratik üs. Erken giriş yapmayı planlayanlar için mantıklı.',
+          "title": "Serik",
+          "body": "Konumu nedeniyle karşılaştırılabilecek bir ilçe. Belirli tesisi, geliş yolunu ve hizmetleri inceleyin; en yakın veya en kolay seçenek varsaymayın."
         },
         {
-          title: 'Belek',
-          body: 'Deniz tatili ve resort konforunu Aspendos günüyle birleştirmek isteyenler için iyi seçenek.',
+          "title": "Belek",
+          "body": "Daha geniş yolculuk planınızla birlikte değerlendirin; tesis adresini, ulaşımı ve rezervasyon koşullarını kontrol edin."
         },
         {
-          title: 'Side / Manavgat',
-          body: 'Birden fazla antik kent, sahil ve akşam yürüyüşü planlıyorsanız rotayı doğuya doğru devam ettirmek için uygun.',
-        },
-      ],
-    },
+          "title": "Side / Manavgat",
+          "body": "Farklı bir kıyı programı için düşünülebilir. Süreleri ve rotayı inceleyin; güncel otel müsaitliği iddiası yoktur."
+        }
+      ]
+    }
   },
-  sources: {
-    eyebrow: 'Kaynaklar',
-    title: 'Resmî ve güvenilir kaynaklarla doğrulanmış bilgi.',
-    items: [
+  "sources": {
+    "eyebrow": "Kaynaklar",
+    "title": "Kaynaklar ve doğrulamanın sınırları.",
+    "items": [
       {
-        name: 'Resmî Müze sayfası – Aspendos Örenyeri',
-        href: 'https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP',
-        note: 'Ziyaret saatleri, ücret tarifesi ve etkinlik duyuruları için resmî kanal.',
+        "name": "Resmî Müze sayfası – Aspendos Örenyeri",
+        "href": "https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP",
+        "note": "26 Ekim 2026’da okunan müze kaydı: ziyaret/gişe saati, adres, MüzeKart notu; sayısal güncel ücret doğrulanmadı."
       },
       {
-        name: 'UNESCO Dünya Mirası Geçici Listesi – Aspendos',
-        href: 'https://whc.unesco.org/en/tentativelists/6036/',
-        note: 'Aspendos Tiyatrosu ve Su Kemerleri’nin adaylık dosyası.',
+        "name": "UNESCO Dünya Mirası Geçici Listesi – Aspendos",
+        "href": "https://whc.unesco.org/en/tentativelists/6036/",
+        "note": "13 Nisan 2015 tarihli devlet geçici liste dosyası: tarih ve mimari; kesin kayıt veya güncel işletme koşulu değildir."
       },
       {
-        name: 'Türkiye Resmî Turizm Portalı (Go Türkiye)',
-        href: 'https://www.goturkiye.com/',
-        note: 'Antalya ve Pamphylia bölgesi kültür–turizm rotaları için resmî portal.',
+        "name": "Türkiye Resmî Turizm Portalı (Go Türkiye)",
+        "href": "https://goturkiye.com/locations/aspendos",
+        "note": "Aspendos’a özel tiyatro sayfası: arkeoloji ve kültürel bağlam; teyit edilmiş etkinlik programı değil."
       },
+      {
+        "name": "Google Maps — Aspendos Theatre",
+        "href": "https://maps.app.goo.gl/DSrGmEky8GKnY3pK8",
+        "note": "Tarih atfedilmiş üçüncü taraf konum, puan ve çelişen 08.00–22.00 kaydı; işletmeci politikası değildir."
+      }
     ],
-    freshnessLabel: 'Güncellik:',
-    freshnessBody:
-      'Saatler ve ücretler dönemsel değişebilir. Sayfa Eylül 2026’da gözden geçirilmiştir; yola çıkmadan önce resmî Müze kanalını kontrol edin.',
-    creditLabel: 'Fotoğraf telifleri:',
-    creditBody:
-      'Bu sitede gösterilen tüm fotoğrafların mülkiyeti ve telif hakları özgün fotoğrafçılarına aittir.',
-    cta: 'Resmî sayfaya git ↗',
+    "freshnessLabel": "Güncellik:",
+    "freshnessBody": "26 Ekim 2026’da kontrol edildi. Bakanlık ve Maps saatleri farklı; müze sayfasında güncelleme tarihi yok ve güncel sayısal ücret doğrulanmadı. Çıkmadan teyit edin.",
+    "creditLabel": "Fotoğraf telifleri:",
+    "creditBody": "Geçmiş yıllara ait fotoğrafların yazar, tarih ve CC BY-SA lisansları aşağıda ayrı ayrı verilir. Web türevleri boyutlandırılmış/sıkıştırılmış olabilir; tasarım görsel kırpma uygulayabilir.",
+    "cta": "Kaynağı aç ↗"
   },
-  faq: {
-    eyebrow: 'SSS',
-    title: 'Gitmeden önce kısa cevaplar.',
-    items: [
+  "faq": {
+    "eyebrow": "SSS",
+    "title": "Gitmeden önce kısa cevaplar.",
+    "items": [
       {
-        q: 'Aspendos Antik Tiyatrosu nerede?',
-        a: 'Antalya’nın Serik ilçesine bağlı Belkıs Mahallesi’nde, Aspendos Yolu üzerindedir. Antalya kent merkezine yaklaşık 40 km, Serik merkeze yaklaşık 8 km uzaklıktadır. Plus Code: W5QC+HV Serik, Antalya.',
+        "q": "Aspendos Tiyatrosu nerede?",
+        "a": "Belkıs, Serik, Antalya, Türkiye’dedir. Kimliği için Maps’teki 36.9389411, 31.1721993 noktasını kullanın. Antik kent, su kemeri ve modern Gloria Aspendos Arena ayrı yerlerdir."
       },
       {
-        q: 'Aspendos Antik Tiyatrosu ziyaret saatleri (açılış–kapanış) nedir?',
-        a: 'Kültür ve Turizm Bakanlığı Müze sayfasında gündüz ziyareti için 08.00–18.45 saatleri listeleniyor. Saatler sezon, özel etkinlik veya bakım nedeniyle değişebileceğinden yola çıkmadan önce resmî Müze sayfasını kontrol etmek en güvenlisidir.',
+        "q": "Hangi ziyaret saati geçerli?",
+        "a": "26 Ekim 2026’da okunan Bakanlık sayfası 08.00–19.00 ve gişe 18.30 yazıyor; güncelleme tarihi yok. Maps her gün 08.00–22.00 gösteriyordu. Bu fark nedeniyle geç giriş varsaymadan müzeden güncel kabulü teyit edin."
       },
       {
-        q: 'Aspendos giriş ücreti 2026’da ne kadar?',
-        a: 'Resmî 2026 yabancı ziyaretçi ücret tarifesinde Aspendos Örenyeri için 15 € listeleniyor. Türkiye Cumhuriyeti vatandaşları için MüzeKart geçerlidir; dönemsel uygulamalar değişebilir.',
+        "q": "Güncel bilet ücreti nedir?",
+        "a": "Okunan birincil ürün sayfalarında sayısal tarife doğrulanmadı. Geçerli kategori, muafiyet ve koşulları müzeye sorun. Tur, gece ziyareti ve gösteri biletleri ayrı olabilir."
       },
       {
-        q: 'MüzeKart Aspendos’ta geçerli mi?',
-        a: 'Evet. Aspendos Örenyeri resmî müze statüsünde olduğu için T.C. vatandaşları MüzeKart ile giriş yapabilir. Yabancı ziyaretçiler için ayrı bir ücret tarifesi uygulanır.',
+        "q": "MüzeKart geçerli mi?",
+        "a": "Bakanlık sayfasında T.C. vatandaşları için geçerli yazıyor. Güncel uygunluk, belge, gece veya etkinlik istisnalarını doğrulayın; tüm ziyaretçi ve gösteriler için sınırsız vaat değildir."
       },
       {
-        q: 'Aspendos Antik Tiyatrosu ücretsiz mi?',
-        a: 'Hayır. Örenyeri resmî müze statüsündedir ve ziyaret için giriş bileti gereklidir. Güncel ücretler ve muafiyetler için resmî Müze kanalını kontrol edin.',
+        "q": "Ne kadar zaman ayırmalı?",
+        "a": "Açık alanlara, ilginize ve hareket gereksiniminize göre yalnız tiyatroyu veya daha geniş geziyi seçin. Akropol ve su kemeri ayrı rota kontrolleri gerektirir; sabit süre ya da tam devre garanti edilmez."
       },
       {
-        q: 'Aspendos’u gezmek için ne kadar zaman ayırmalı?',
-        a: 'Sadece tiyatro için yaklaşık 45–60 dakika; tiyatroya ek olarak akropol, bazilika, agora ve su kemeri kalıntılarını görmek için yaklaşık 1,5–2,5 saat ayırmak daha rahattır.',
+        "q": "Antalya’dan nasıl gidilir?",
+        "a": "Belkıs, Serik’e gerçek rotayı planlayın. Hat, son etap ve dönüşü işletmeciden doğrulayın; güncel otobüs tarifesi veya araç süresi teyit edilmemiştir."
       },
       {
-        q: 'Aspendos’a Antalya’dan nasıl gidilir?',
-        a: 'En rahat seçenek D400 üzerinden özel araç veya taksidir. Toplu taşımada Antalya’dan Serik’e ulaşıp son bölüm için yerel minibüs ya da taksi kullanmak pratik bir çözümdür.',
+        "q": "Otopark kesin mi?",
+        "a": "Bu rehber güncel özel ziyaretçi otoparkı düzenini doğrulamadı. Yer varsaymadan yasal indirme, erişilebilir geliş, ücret ve kısıtları sorun."
       },
       {
-        q: 'Aspendos tiyatrosunda otopark var mı?',
-        a: 'Giriş çevresinde ziyaretçi araçları için park alanları bulunur. Yoğun sezon ve etkinlik günlerinde yer hızlı dolduğundan sabah erken gelmek avantajlıdır; park düzeni dönemsel değişebilir.',
+        "q": "Tiyatronun kapasitesi nedir?",
+        "a": "Bakanlık açıklaması, turizm portalı ve devletin UNESCO geçici liste dosyası farklı sayılar veya oturma varsayımları kullanır. Bunlar burada bugünkü izinli etkinlik kapasitesi olarak verilmez."
       },
       {
-        q: 'Aspendos Antik Kenti’nde tiyatronun dışında ne görülür?',
-        a: 'Tiyatronun arkasındaki akropolde agora, bazilika ve anıtsal yapı kalıntıları; kentin kuzeyinde ise Roma su kemerleri ve sifon sistemi görülebilir. Bu nedenle Aspendos bir “tek anıt” değil, bütüncül bir antik kenttir.',
+        "q": "UNESCO Dünya Mirası mı?",
+        "a": "Tiyatro ve su kemerleri 13 Nisan 2015’te Türkiye’nin UNESCO Dünya Mirası Geçici Listesi’ne sunulmuştur. Geçici liste, Dünya Mirası Listesi’ne kesin kayıttan farklıdır."
       },
       {
-        q: 'Aspendos Antik Tiyatrosu hakkında kısa bilgi nedir?',
-        a: 'M.S. 2. yüzyılda (yaklaşık 160–180), Marcus Aurelius döneminde inşa edilen Aspendos Tiyatrosu, mimarı Teodoros’un oğlu Zenon olan, iki katlı sahne binası neredeyse tümüyle ayakta kalmış en iyi korunmuş Roma tiyatrolarından biridir. 13. yüzyılda Selçuklu döneminde onarılmıştır.',
+        "q": "Örenyeri biletiyle gösteriye girilir mi?",
+        "a": "Varsaymayın. Turizm portalı kültürel kullanımı anlatır; belirli etkinlik, bilet, giriş ve program organizatörden güncel teyit gerektirir."
       },
       {
-        q: 'Aspendos tiyatrosu kaç kişilik (kapasite)?',
-        a: 'Kapasite kaynaklara göre değişmekle birlikte yaygın tahminler 12.000–20.000 seyirci aralığındadır. Alt ve üst cavea birlikte 41 sıra oturma düzeni oluşturur.',
+        "q": "Hareket kısıtlılığıyla ziyaret edilir mi?",
+        "a": "Bugünkü erişilebilir geliş ve seyir düzenini müzeye sorun. Tarihî basamak, eğim veya fotoğraf kesintisiz erişilebilir rota kanıtlamaz."
       },
       {
-        q: 'Tiyatro hâlâ etkinliklerde kullanılıyor mu?',
-        a: 'Evet. Yapı günümüzde de açık hava konserleri, gösteriler ve film gösterimleri gibi kontrollü kültür etkinliklerine ev sahipliği yapabiliyor. Etkinlik günlerinde ziyaret düzeni değişebileceği için programı önceden kontrol edin.',
-      },
-      {
-        q: 'Aspendos UNESCO Dünya Mirası mı?',
-        a: 'Aspendos Tiyatrosu ve Su Kemerleri Türkiye’nin UNESCO Dünya Mirası Geçici Listesi’ndedir. Bu statü, alanın henüz Dünya Mirası Listesi’ne kesin olarak kaydedildiği anlamına gelmez.',
-      },
-      {
-        q: 'Aspendos Antik Tiyatrosu iletişim / telefon numarası var mı?',
-        a: 'Bu site bağımsız bir rehberdir; örenyerine ait doğrudan bir telefon hattı paylaşmıyoruz. Saat, ücret ve etkinlik bilgisi için Kültür ve Turizm Bakanlığı Müze sayfasındaki resmî iletişim kanallarını kullanın.',
-      },
-      {
-        q: 'Tekerlekli sandalye / engelli erişimi nasıl?',
-        a: 'Antik taş zemin, eğimli yollar ve oturma sıraları nedeniyle erişim her noktada aynı değildir. Güncel erişilebilirlik düzenlemesi için ziyaret öncesinde resmî Müze kanalına danışmak en doğrusudur.',
-      },
-    ],
+        "q": "Bilgiyi nereden teyit ederim?",
+        "a": "Bakanlık müze sayfasında 0242 892 13 25 telefonu ve Belkıs, Serik/Antalya adresi yer alır. Bunlar 26 Ekim 2026’da okunan resmî sayfaya atfedilir; bu rehber o iletişim bürosu değildir."
+      }
+    ]
   },
-  footer: {
-    disclaimer:
-      'Bu site bağımsız bir ziyaret rehberidir; Kültür ve Turizm Bakanlığı, Aspendos Örenyeri veya herhangi bir resmî kurumla bağlantılı değildir. Saat ve ücretler değişebileceğinden ziyaret öncesi resmî kanalları kontrol edin.',
-    locationLabel: 'Konum',
-    directions: 'Yol tarifi al ↗',
-    links: {
-      map: 'Google Maps konumu ↗',
-      museum: 'Resmî Müze bilgisi ↗',
-      unesco: 'UNESCO Geçici Liste dosyası ↗',
+  "footer": {
+    "disclaimer": "Bağımsız, resmî olmayan, kâr amacı gütmeyen turizm ve eğitici gezi rehberi. Bakanlık, örenyeri veya etkinlik işletmecisiyle bağlantılı değildir. Değişebilen giriş ve hizmet koşullarını sorumlu sağlayıcıdan öğrenin.",
+    "locationLabel": "Konum",
+    "directions": "Yol tarifi al ↗",
+    "links": {
+      "map": "Google Maps konumu ↗",
+      "museum": "Resmî Müze bilgisi ↗",
+      "unesco": "UNESCO Geçici Liste dosyası ↗"
     },
-    photoCredit:
-      'Bu sitede gösterilen tüm fotoğrafların mülkiyeti ve telif hakları özgün fotoğrafçılarına aittir. Ayrıntılı lisans bilgileri PHOTO-CREDITS.md dosyasındadır.',
+    "photoCredit": "Geçmiş yıllara ait fotoğrafların yazar, tarih ve CC BY-SA lisansları aşağıda ayrı ayrı verilir. Web türevleri boyutlandırılmış/sıkıştırılmış olabilir; tasarım görsel kırpma uygulayabilir."
   },
-  labels: {
-    rating: 'Google puanı',
-    duration: 'Önerilen süre',
-    price: 'Giriş ücreti',
-    hours: 'Ziyaret saatleri',
-  },
+  "labels": {
+    "rating": "Google puanı",
+    "duration": "Önerilen süre",
+    "price": "Giriş ücreti",
+    "hours": "Ziyaret saatleri"
+  }
 };

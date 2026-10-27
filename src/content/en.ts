@@ -1,386 +1,368 @@
 import type { SiteContent } from './types';
-
 export const en: SiteContent = {
-  meta: {
-    title:
-      'Aspendos Theatre Antalya — Travel Guide | 2026 Opening Hours, Ticket Price, How to Get There',
-    description:
-      'Where is Aspendos Theatre, what time does it open, how much is the ticket and how do you get there from Antalya? Updated opening hours, entry fee, transport, parking, walking route and nearby Perge & Side.',
-    ogTitle: 'Aspendos Theatre | Antalya Travel Guide',
-    ogDescription:
-      'History, architecture, opening hours, ticket price, transport and location: a complete guide to Aspendos Theatre, the best preserved Roman theatre in the Mediterranean world.',
+  "meta": {
+    "title": "Aspendos Theatre, Serik Antalya: history, hours to check and map",
+    "description": "Visit Aspendos Roman Theatre in Belkıs, Serik: museum and Maps hours differ. Check admission, travel and event arrangements; see sourced history and historic photos.",
+    "ogTitle": "Aspendos Theatre, Serik Antalya: history, hours to check and map",
+    "ogDescription": "Visit Aspendos Roman Theatre in Belkıs, Serik: museum and Maps hours differ. Check admission, travel and event arrangements; see sourced history and historic photos."
   },
-  nav: {
-    history: 'History',
-    visit: 'Visit',
-    transport: 'Getting here',
-    route: 'Route',
-    sources: 'Sources',
-    faq: 'FAQ',
+  "nav": {
+    "history": "History",
+    "visit": "Visit",
+    "transport": "Getting here",
+    "route": "Route",
+    "sources": "Sources",
+    "faq": "FAQ"
   },
-  hero: {
-    badges: {
-      period: 'Roman period',
-      heritage: 'UNESCO Tentative List',
-      rating: 'Google 4.8 · 22,886 reviews',
+  "hero": {
+    "badges": {
+      "period": "Roman period",
+      "heritage": "UNESCO Tentative List",
+      "rating": "Maps 4.8 · 23,143 · 26 Oct 2026"
     },
-    titleLead: 'Aspendos',
-    titleAccent: 'Theatre',
-    tagline: '“The sound inside the stone.”',
-    lead:
-      'Known in Turkish as Aspendos Antik Tiyatrosu, this two-storey stage building with remarkable acoustics has stood since the age of Marcus Aurelius and is one of the most impressive Roman theatres of the Mediterranean.',
-    ctaMap: 'Location ↗',
-    ctaPlan: 'Plan your visit ↓',
-    imageAlt:
-      'Aspendos Theatre – the semicircular cavea and stage building of the Roman theatre, Serik, Antalya',
+    "titleLead": "Aspendos",
+    "titleAccent": "Theatre",
+    "tagline": "“The sound inside the stone.”",
+    "lead": "Known in Turkish as Aspendos Antik Tiyatrosu, this two-storey stage building with remarkable acoustics has stood since the age of Marcus Aurelius and is one of the most impressive Roman theatres of the Mediterranean.",
+    "ctaMap": "Location ↗",
+    "ctaPlan": "Plan your visit ↓",
+    "imageAlt": "Aspendos Theatre – the semicircular cavea and stage building of the Roman theatre, Serik, Antalya"
   },
-  facts: [
+  "facts": [
     {
-      label: 'Daytime hours',
-      title: '08.00–18.45',
-      body: 'The daytime visiting window listed on the official museum page for every day.',
+      "label": "Museum page",
+      "title": "08:00–19:00",
+      "body": "Read 26 October 2026; ticket counter 18:30. The page shows no update date."
     },
     {
-      label: 'Foreign visitor',
-      title: '15 €',
-      body: 'Official 2026 entry fee. The MüzeKart is valid for citizens of Türkiye.',
+      "label": "Maps listing",
+      "title": "08:00–22:00",
+      "body": "Dated third-party daily listing, checked 26 October 2026; not a guarantee of museum or performance access."
     },
     {
-      label: 'Google rating',
-      title: '4.8 / 5',
-      body: 'Based on 22,886 Google Maps reviews (snapshot September 2026).',
+      "label": "Google Maps",
+      "title": "4.8 / 5",
+      "body": "23,143 reviews in the listing checked 26 October 2026; not this guide’s own rating."
     },
     {
-      label: 'Suggested time',
-      title: '1.5–2.5 hours',
-      body: 'Comfortable pace if you add the acropolis and the aqueducts to the theatre itself.',
-    },
+      "label": "Admission",
+      "title": "Confirm the tariff",
+      "body": "No current numeric fee verified in the primary pages read. Check eligibility, exemptions and any separate event ticket."
+    }
   ],
-  crumbs: ['Türkiye', 'Antalya', 'Serik', 'Aspendos Theatre'],
-  story: {
-    eyebrow: '2nd century AD',
-    titlePrefix: 'More than a theatre: ',
-    titleAccent: 'a preserved memory of a city.',
-    paragraphs: [
-      'Aspendos Theatre stands close to Belkıs in the district of Serik, Antalya, as the monumental structure of the ancient city of Aspendos. It was built in the reign of Marcus Aurelius, roughly between AD 160 and 180. The UNESCO Tentative List dossier records the architect as Zenon, son of Teodoros; the construction is linked to a donation by two brothers of the Curtius family.',
-      'The semicircular cavea leaning against the eastern slope of the acropolis, and the two-storey stage building opposite it that survives almost entirely, make the structure unique. The vaulted gallery running along the upper rows organised the movement of the audience, while the stage wall still keeps the monumental architectural backdrop of a Roman theatre readable.',
-      'Repaired in the 13th century under the Seljuks and reused as a palace, the stage building contributed enormously to the exceptional preservation of the theatre. Today Aspendos is not only an ancient performance space but a layered architectural document reaching from Rome to the Seljuks, and the strongest open-air stage of the Pamphylia region.',
+  "crumbs": [
+    "Türkiye",
+    "Antalya",
+    "Serik",
+    "Aspendos Theatre"
+  ],
+  "story": {
+    "eyebrow": "2nd century AD",
+    "titlePrefix": "More than a theatre: ",
+    "titleAccent": "a preserved memory of a city.",
+    "paragraphs": [
+      "Aspendos Theatre stands close to Belkıs in the district of Serik, Antalya, as the monumental structure of the ancient city of Aspendos. It was built in the reign of Marcus Aurelius, roughly between AD 160 and 180. The UNESCO Tentative List dossier records the architect as Zenon, son of Teodoros; the construction is linked to a donation by two brothers of the Curtius family.",
+      "The semicircular cavea leaning against the eastern slope of the acropolis, and the two-storey stage building opposite it that survives almost entirely, make the structure unique. The vaulted gallery running along the upper rows organised the movement of the audience, while the stage wall still keeps the monumental architectural backdrop of a Roman theatre readable.",
+      "The state-party UNESCO Tentative List dossier describes 13th-century Seljuk restoration and reuse as a palace. These later layers help explain the survival of the stage building. The tentative dossier is a historical source, not a current event or visitor-access notice."
     ],
-    stats: [
+    "stats": [
       {
-        label: 'Cavea',
-        title: '20 + 21',
-        body: 'The lower and upper seating blocks are separated by a horizontal circulation line called the diazoma.',
+        "label": "Cavea",
+        "title": "20 + 21",
+        "body": "The lower and upper seating blocks are separated by a horizontal circulation line called the diazoma."
       },
       {
-        label: 'Stage front',
-        title: '≈ 100 m',
-        body: 'The monumental front, about one hundred metres wide, carries architectural decoration across two storeys.',
-      },
+        "label": "Stage front",
+        "title": "≈ 100 m",
+        "body": "The monumental front, about one hundred metres wide, carries architectural decoration across two storeys."
+      }
     ],
-    figureCaption:
-      'The tight relationship between cavea and stage gathers both sound and sight into a single centre.',
-    interiorAlt: 'Aspendos Theatre stone seating rows and stage structure – interior view',
+    "figureCaption": "The tight relationship between cavea and stage gathers both sound and sight into a single centre.",
+    "interiorAlt": "Aspendos Theatre stone seating rows and stage structure – interior view"
   },
-  architecture: {
-    eyebrow: 'Reading the architecture',
-    titlePlain: 'The stage building is still not a “wall”, but a ',
-    titleAccent: 'facade composition.',
-    body:
-      'Doors, niches, friezes, consoles and pediments set up the back of the stage like a two-storey architectural backdrop. Look closely and you can read Roman decoration and Seljuk repair work on the same stone surface.',
-    noteLabel: 'Acoustics test:',
-    noteBody:
-      'When the site is quiet, try a normal speaking voice near the orchestra; listen for the natural resonance of the structure instead of shouting.',
-    stageAlt: 'Aspendos Theatre two-storey stage front, Serik, Antalya',
+  "architecture": {
+    "eyebrow": "Reading the architecture",
+    "titlePlain": "The stage building is still not a “wall”, but a ",
+    "titleAccent": "facade composition.",
+    "body": "Doors, niches, friezes, consoles and pediments set up the back of the stage like a two-storey architectural backdrop. Look closely and you can read Roman decoration and Seljuk repair work on the same stone surface.",
+    "noteLabel": "Acoustics test:",
+    "noteBody": "Observe quietly from permitted visitor areas and follow staff instructions; this guide does not confirm permission for an acoustic demonstration or access onto the stage.",
+    "stageAlt": "Aspendos Theatre two-storey stage front, Serik, Antalya"
   },
-  visit: {
-    eyebrow: 'Visitor information',
-    title: 'A plan that accounts for sun, stone and crowds.',
-    cards: [
+  "visit": {
+    "eyebrow": "Visitor information",
+    "title": "A plan that accounts for sun, stone and crowds.",
+    "cards": [
       {
-        label: 'Opening',
-        title: '08.00',
-        body: 'The daytime opening time listed on the official museum page for every day.',
+        "label": "Museum page",
+        "title": "08:00–19:00",
+        "body": "The Ministry listing read on 26 October gives these visiting hours; it has no visible update date."
       },
       {
-        label: 'Closing',
-        title: '18.45',
-        body: 'May change with the season, special events or maintenance; check again on the day.',
+        "label": "Ticket counter",
+        "title": "18:30",
+        "body": "The same page lists this counter closing time. Confirm last admission and restrictions for your date."
       },
       {
-        label: 'Ticket / fee',
-        title: '15 €',
-        body: 'Official foreign visitor fee. The MüzeKart is valid for citizens of Türkiye.',
+        "label": "Fee",
+        "title": "Check directly",
+        "body": "No current numeric price has been verified. Do not treat an old rate or a tour offer as a current universal tariff."
       },
       {
-        label: 'Duration',
-        title: '1.5–2.5 hrs',
-        body: 'Suggested range at an easy pace for the theatre plus acropolis and water structures.',
-      },
+        "label": "Planning",
+        "title": "Choose your scope",
+        "body": "Decide whether to see the theatre alone or separate ancient-city and aqueduct areas, depending on permitted access and your mobility."
+      }
     ],
-    noteLabel: 'Note:',
-    noteBody:
-      'Night museum visits and stage events may run seasonally. Do not confuse normal daytime visiting with event tickets or times; rely on the official Ministry of Culture and Tourism museum channel for current information.',
+    "noteLabel": "Note:",
+    "noteBody": "Checked 26 October 2026: the Ministry museum page lists 08:00–19:00, ticket counter until 18:30; Maps lists 08:00–22:00 daily. Neither establishes an event ticket or guaranteed late admission. Confirm with the museum before travelling."
   },
-  route: {
-    eyebrow: 'Walking route',
-    title: 'Do not see only the theatre and leave.',
-    lead:
-      'The value of Aspendos is better understood together with the ancient city fabric that continues behind the stage building and the water system stretching to the north.',
-    steps: [
+  "route": {
+    "eyebrow": "Walking route",
+    "title": "Choose open, suitable areas separately.",
+    "lead": "Consider these as separate areas to investigate, not a guaranteed continuous or fully accessible circuit. Confirm the open areas, ground conditions and your time before adding each one.",
+    "steps": [
       {
-        title: 'Stage front and orchestra',
-        body: 'Start at ground level. Read the five doors, the two-storey arrangement and the scale of the stone decoration up close.',
+        "title": "Stage front and orchestra",
+        "body": "If the area is open and permitted, observe the stage front and orchestra from designated visitor space. Do not enter restricted performance areas."
       },
       {
-        title: 'Cavea and upper gallery',
-        body: 'Climb the seating rows carefully to take in the semicircular geometry. The upper level gives one of the strongest views for understanding the stage–city–landscape relationship.',
+        "title": "Cavea and upper gallery",
+        "body": "Use the seating or upper gallery only where access is allowed and suitable for your balance and mobility. Ancient steps do not establish a wheelchair route."
       },
       {
-        title: 'Acropolis: agora, basilica and monumental structures',
-        body: 'Continue to the rise behind the theatre. Here you see that the ancient city of Aspendos was never just a theatre: public life was organised through several different buildings.',
+        "title": "Acropolis: agora, basilica and monumental structures",
+        "body": "The dossier describes the agora, basilica and other ancient-city remains. Check the actual path and open areas before continuing beyond the theatre."
       },
       {
-        title: 'The aqueducts',
-        body: 'If you have time, add the arches and siphon system, one of the most striking pieces of Roman water engineering. This is why the UNESCO Tentative List dossier highlights Aspendos together with its aqueducts.',
+        "title": "The aqueducts",
+        "body": "The aqueduct is a separate nearby structure. Check its route, allowed viewing areas and return transport; a theatre ticket or photograph does not prove access there."
+      }
+    ]
+  },
+  "photos": {
+    "eyebrow": "Photo spots",
+    "title": "The best frame shows the geometry of the structure.",
+    "cards": [
+      {
+        "title": "Upper cavea",
+        "body": "A wider frame can show seating and stage together; use only permitted, suitable visitor positions."
       },
+      {
+        "title": "Stage doors",
+        "body": "Observe the architectural door frames from allowed areas without blocking other visitors."
+      },
+      {
+        "title": "Outer arcades",
+        "body": "Exterior arches reveal the stone construction; historic photographs are not current entrance directions."
+      },
+      {
+        "title": "Morning / late afternoon",
+        "body": "Choose light and timing within confirmed visiting hours. Do not assume sunset access or a guaranteed quiet scene."
+      }
     ],
+    "detailAlt": "Aspendos Theatre outer arcade arches and stone details"
   },
-  photos: {
-    eyebrow: 'Photo spots',
-    title: 'The best frame shows the geometry of the structure.',
-    cards: [
+  "transport": {
+    "eyebrow": "Getting here in detail",
+    "title": "Plan your arrival at the theatre in Belkıs, Serik, Antalya.",
+    "modes": [
       {
-        title: 'Upper cavea',
-        body: 'The strongest angle to gather the semicircular seating, the orchestra and the stage front in one frame. A wide-angle lens helps here.',
+        "title": "Car / taxi",
+        "body": "Set the destination to Aspendos Theatre in Belkıs, Serik, Antalya. Review the actual road route and lawful drop-off with your driver, and arrange the return independently; no fixed airport distance or journey time is promised."
       },
       {
-        title: 'Stage doors',
-        body: 'Use the door openings as a frame to capture the layers of the stone surface together with human scale.',
+        "title": "Public transport",
+        "body": "Check current routes and connections with transport operators. This guide has not verified a current Belkıs minibus timetable, fare or last departure; confirm the final leg and return before travelling."
       },
       {
-        title: 'Outer arcades',
-        body: 'The less known outer circulation face clearly shows the rhythm of arches and Roman engineering.',
-      },
-      {
-        title: 'Morning / late afternoon',
-        body: 'Lower sun strengthens the shadows of the stone reliefs. At midsummer the midday light is harsh and hot.',
-      },
+        "title": "Tour / transfer",
+        "body": "Review the operator’s actual programme, site admission, performance tickets and time at each stop. Perge, Side and canyon trips are separate destinations; do not assume every combination fits your day."
+      }
     ],
-    detailAlt: 'Aspendos Theatre outer arcade arches and stone details',
+    "addressLabel": "Address:",
+    "plusCodeLabel": "Plus Code:",
+    "ctaMap": "Open in Google Maps ↗",
+    "mapTitle": "Aspendos Theatre Google Map – Serik, Antalya"
   },
-  transport: {
-    eyebrow: 'Getting here in detail',
-    title: 'About 8 km east of Serik, on Aspendos Yolu leaving the D400 corridor.',
-    modes: [
-      {
-        title: 'Car / taxi',
-        body: 'From Antalya follow the D400 towards Serik and then the Aspendos signs. The road distance from Antalya Airport to Aspendos is around 40 km; traffic can change the travel time considerably.',
-      },
-      {
-        title: 'Public transport',
-        body: 'Reach Serik town centre from Antalya first. From Serik ask for the current local minibus connection towards Belkıs/Aspendos, or take a taxi for the last stretch. Fix your return time in advance, especially for late afternoon.',
-      },
-      {
-        title: 'Tour / transfer',
-        body: 'Perge–Aspendos–Side combinations make efficient use of a day. On a guided tour, check whether time for the acropolis and the aqueduct beyond the theatre is included in the programme.',
-      },
-    ],
-    addressLabel: 'Address:',
-    plusCodeLabel: 'Plus Code:',
-    ctaMap: 'Open in Google Maps ↗',
-    mapTitle: 'Aspendos Theatre Google Map – Serik, Antalya',
-  },
-  practical: {
-    parking: {
-      label: 'Parking',
-      title: 'Leave the car near the entrance; be ready to walk inside the ancient city.',
-      body: 'There are parking areas for visitor vehicles close to the site entrance. In high season and on event days spaces fill quickly, so arriving early in the morning is an advantage. We do not quote a fixed fee because parking arrangements and charges can change seasonally.',
+  "practical": {
+    "parking": {
+      "label": "Parking",
+      "title": "Check parking and drop-off arrangements.",
+      "body": "No current dedicated parking arrangement has been confirmed by this guide. Ask the museum about lawful drop-off, accessible arrival and any fees; do not assume a space at the entrance."
     },
-    bestTime: {
-      label: 'Best time',
-      title: 'Choose the hours when the light falls sideways on the stone.',
-      body: 'Spring and autumn offer more balanced temperatures for walking. In summer, the hours near opening time or late afternoon are more comfortable both for heat and for photographic light. Bring a hat, water and shoes with good grip.',
-    },
+    "bestTime": {
+      "label": "Best time",
+      "title": "Plan around actual conditions and confirmed hours.",
+      "body": "Check the local forecast, heat, rain and your mobility needs. Bring suitable footwear and water as appropriate; the guide does not certify a safe path, quiet period or complete visit duration."
+    }
   },
-  surroundings: {
-    eyebrow: 'Nearby',
-    title: 'Layers of Pamphylia that fit into a single day.',
-    cards: [
+  "surroundings": {
+    "eyebrow": "Nearby",
+    "title": "Separate ideas for another part of your trip.",
+    "cards": [
       {
-        label: 'Ancient city',
-        title: 'Perge',
-        body: 'With its colonnaded streets, agora and stadium, a strong Roman city that completes the theatre-centred experience of Aspendos.',
+        "label": "Ancient city",
+        "title": "Perge",
+        "body": "A separate archaeological destination mentioned by the tourism portal. Check its own opening, ticket conditions and travel route."
       },
       {
-        label: 'Coast & history',
-        title: 'Side',
-        body: 'Ancient theatre, city ruins and the Temple of Apollo by the sea; a route that can be stretched into sunset.',
+        "label": "Coast & history",
+        "title": "Side",
+        "body": "A separate coastal archaeological destination; check site hours, routes and transport rather than assuming a sunset visit."
       },
       {
-        label: 'Nature',
-        title: 'Köprülü Canyon',
-        body: 'Walking, views and rafting in the Köprüçay valley. It lets you feel Aspendos’ historical link with the river system in the landscape.',
+        "label": "Nature",
+        "title": "Köprülü Canyon",
+        "body": "A separate natural destination. Rafting or other activities require their own operator, conditions and arrangements; they are not included in a theatre visit."
       },
       {
-        label: 'Town break',
-        title: 'Serik',
-        body: 'The most practical centre for fuel, food and basic needs, about 8 km from Aspendos.',
-      },
+        "label": "Town break",
+        "title": "Serik",
+        "body": "Serik is the district named in the museum address. Check any specific fuel, food or other service directly; this guide has not verified current providers."
+      }
     ],
-    aqueductCaption:
-      'The aqueducts of Aspendos are evaluated together with the theatre in the UNESCO Tentative List dossier.',
-    aqueductAlt: 'The Aspendos aqueducts near Aspendos Theatre',
+    "aqueductCaption": "The aqueducts of Aspendos are evaluated together with the theatre in the UNESCO Tentative List dossier.",
+    "aqueductAlt": "The Aspendos aqueducts near Aspendos Theatre"
   },
-  foodStay: {
-    food: {
-      eyebrow: 'Where to eat nearby?',
-      title: 'Follow the rhythm of the region instead of the tourist stop.',
-      items: [
+  "foodStay": {
+    "food": {
+      "eyebrow": "Where to eat nearby?",
+      "title": "Checks before choosing a meal stop.",
+      "items": [
         {
-          title: 'Serik centre',
-          body: 'More local choice for pide, şiş/köfte and Antalya style piyaz. Comparing prices and menus is easier than around the theatre.',
+          "title": "Serik centre",
+          "body": "Confirm the exact business address, opening and menu for your date; no current restaurant list has been verified."
         },
         {
-          title: 'Towards Köprüçay',
-          body: 'If you combine the trip with the canyon, riverside places serving trout and grilled dishes make a natural break for the second half of the day.',
+          "title": "Towards Köprüçay",
+          "body": "Check dietary needs, prices and reservation conditions directly with the business."
         },
         {
-          title: 'Towards Belek',
-          body: 'The coastal strip is practical if you want a wider choice of restaurants and hotels for dinner.',
-        },
-      ],
+          "title": "Towards Belek",
+          "body": "Allow for the actual route and your return transport; proximity on a map is not confirmed availability."
+        }
+      ]
     },
-    stay: {
-      eyebrow: 'Where to stay?',
-      title: 'Three bases depending on how you travel.',
-      items: [
+    "stay": {
+      "eyebrow": "Where to stay?",
+      "title": "Compare a base with your actual itinerary.",
+      "items": [
         {
-          title: 'Serik',
-          body: 'The closest, transport-oriented and practical base. Sensible if you plan to arrive early.',
+          "title": "Serik",
+          "body": "A district to compare for its location. Check the specific accommodation, arrival route and services rather than assuming it is the nearest or easiest option."
         },
         {
-          title: 'Belek',
-          body: 'A good option if you want to combine a beach holiday and resort comfort with a day at Aspendos.',
+          "title": "Belek",
+          "body": "Consider it only in relation to your wider trip; verify the accommodation address, transport and booking conditions."
         },
         {
-          title: 'Side / Manavgat',
-          body: 'Suitable if you plan several ancient cities, beaches and evening walks and want to continue the route eastwards.',
-        },
-      ],
-    },
+          "title": "Side / Manavgat",
+          "body": "A possible base for a different coastal itinerary. Check travel times and your programme; no hotel availability is claimed."
+        }
+      ]
+    }
   },
-  sources: {
-    eyebrow: 'Sources',
-    title: 'Information verified against official and reliable sources.',
-    items: [
+  "sources": {
+    "eyebrow": "Sources",
+    "title": "Sources and the limits of verification.",
+    "items": [
       {
-        name: 'Official museum page – Aspendos Archaeological Site',
-        href: 'https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP',
-        note: 'The official channel for opening hours, the fee schedule and event announcements.',
+        "name": "Official museum page – Aspendos Archaeological Site",
+        "href": "https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP",
+        "note": "Museum listing read 26 October 2026: visiting and counter hours, address and MüzeKart note; no numeric tariff verified."
       },
       {
-        name: 'UNESCO World Heritage Tentative List – Aspendos',
-        href: 'https://whc.unesco.org/en/tentativelists/6036/',
-        note: 'The nomination dossier for the Aspendos Theatre and Aqueducts.',
+        "name": "UNESCO World Heritage Tentative List – Aspendos",
+        "href": "https://whc.unesco.org/en/tentativelists/6036/",
+        "note": "State-party Tentative List submission, 13 April 2015: architecture and history; not inscription or current operating conditions."
       },
       {
-        name: 'Official Tourism Portal of Türkiye (Go Türkiye)',
-        href: 'https://www.goturkiye.com/',
-        note: 'Official portal for culture and tourism routes in Antalya and the Pamphylia region.',
+        "name": "Official Tourism Portal of Türkiye (Go Türkiye)",
+        "href": "https://goturkiye.com/locations/aspendos",
+        "note": "Specific Aspendos theatre page: archaeological and cultural context; not a confirmed event programme."
       },
+      {
+        "name": "Google Maps — Aspendos Theatre",
+        "href": "https://maps.app.goo.gl/DSrGmEky8GKnY3pK8",
+        "note": "Dated third-party place point, rating and conflicting 08:00–22:00 listing; not operator policy."
+      }
     ],
-    freshnessLabel: 'Freshness:',
-    freshnessBody:
-      'Hours and fees may change seasonally. The page was reviewed in September 2026; check the official museum channel before you set off.',
-    creditLabel: 'Photo credits:',
-    creditBody:
-      'All photographs shown on this site remain the property and copyright of their original photographers.',
-    cta: 'Go to the official page ↗',
+    "freshnessLabel": "Freshness:",
+    "freshnessBody": "Checked 26 October 2026. Museum and Maps hours differ; the museum page has no visible update date and no current price was verified. Confirm before travelling.",
+    "creditLabel": "Photo credits:",
+    "creditBody": "Historical photographs with individual authors, dates and CC BY-SA licences below. Optimized derivatives may be resized/recompressed and visually cropped by the layout.",
+    "cta": "Open source ↗"
   },
-  faq: {
-    eyebrow: 'FAQ',
-    title: 'Short answers before you go.',
-    items: [
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Short answers before you go.",
+    "items": [
       {
-        q: 'Where is Aspendos Theatre?',
-        a: 'It is in the Belkıs neighbourhood of the Serik district of Antalya, on Aspendos Yolu. It is about 40 km from Antalya city centre and about 8 km from Serik centre. Plus Code: W5QC+HV Serik, Antalya.',
+        "q": "Where is Aspendos Theatre?",
+        "a": "In Belkıs, Serik district, Antalya, Türkiye. Use the theatre’s Maps point 36.9389411, 31.1721993 to identify it; the ancient city, aqueduct and modern Gloria Aspendos Arena are separate places."
       },
       {
-        q: 'What are the Aspendos Theatre opening hours?',
-        a: 'The Ministry of Culture and Tourism museum page lists 08.00–18.45 for daytime visits. Because hours can change with the season, special events or maintenance, it is safest to check the official museum page before travelling.',
+        "q": "Which opening hours should I use?",
+        "a": "The Ministry page read on 26 October 2026 lists 08:00–19:00 and ticket counter 18:30, without an update date. Maps listed 08:00–22:00 daily. These conflict; confirm current admission with the museum rather than assuming late entry."
       },
       {
-        q: 'How much is the Aspendos entry fee in 2026?',
-        a: 'The official 2026 foreign visitor fee schedule lists 15 € for the Aspendos Archaeological Site. The MüzeKart is valid for citizens of Türkiye; seasonal practice may change.',
+        "q": "What is the current entry fee?",
+        "a": "No current numeric tariff was verified in the primary product pages read. Check the museum’s applicable rate, eligibility and exemptions. Tour transport, night visits and performance tickets may have separate conditions."
       },
       {
-        q: 'Is the MüzeKart valid at Aspendos?',
-        a: 'Yes. Aspendos has official museum status, so citizens of Türkiye can enter with a MüzeKart. A separate fee schedule applies to foreign visitors.',
+        "q": "Is MüzeKart valid?",
+        "a": "The Ministry page says MüzeKart is valid for citizens of Türkiye. Confirm current eligibility, documents and any event or night-visit exclusions; it is not a promise covering every visitor or performance."
       },
       {
-        q: 'Is Aspendos Theatre free to visit?',
-        a: 'No. The site has official museum status and an entry ticket is required. Check the official museum channel for current fees and exemptions.',
+        "q": "How long should I allow?",
+        "a": "Choose the theatre or a broader visit according to open areas, your interests and mobility. The acropolis and aqueduct add separate routes and checks; no complete circuit or fixed duration is guaranteed."
       },
       {
-        q: 'How much time should I allow for Aspendos?',
-        a: 'Around 45–60 minutes for the theatre alone; around 1.5–2.5 hours is more comfortable if you also want to see the acropolis, basilica, agora and the aqueduct remains.',
+        "q": "How do I reach it from Antalya?",
+        "a": "Plan the actual route to Belkıs, Serik. Confirm transport availability, the final leg and return directly; this guide does not verify a current bus timetable or guarantee a car journey time."
       },
       {
-        q: 'How do I get to Aspendos from Antalya?',
-        a: 'The easiest option is a car or taxi along the D400. By public transport, reach Serik from Antalya first and then use a local minibus or a taxi for the final stretch.',
+        "q": "Is parking confirmed?",
+        "a": "This guide has not confirmed current dedicated visitor parking. Ask about lawful drop-off, accessible arrival, charges and restrictions before relying on a space."
       },
       {
-        q: 'Is there parking at Aspendos Theatre?',
-        a: 'There are parking areas for visitor vehicles near the entrance. Spaces fill quickly in high season and on event days, so arriving early is an advantage; parking arrangements can change seasonally.',
+        "q": "How many spectators could it hold?",
+        "a": "Published estimates differ: the Ministry description, tourism portal and state-party UNESCO Tentative List dossier use different figures or seating assumptions. None should be treated here as a current permitted event capacity."
       },
       {
-        q: 'What else is there to see in the ancient city of Aspendos besides the theatre?',
-        a: 'On the acropolis behind the theatre you can see the remains of the agora, basilica and other monumental buildings; to the north of the city there are the Roman aqueducts and siphon system. Aspendos is therefore a whole ancient city, not a single monument.',
+        "q": "Is it a UNESCO World Heritage Site?",
+        "a": "The Theatre and Aqueducts of Aspendos were submitted to Türkiye’s UNESCO Tentative List on 13 April 2015. Tentative status is distinct from inscription on the World Heritage List."
       },
       {
-        q: 'Short information about Aspendos Theatre?',
-        a: 'Built in the 2nd century AD (around 160–180) under Marcus Aurelius, Aspendos Theatre was designed by the architect Zenon, son of Teodoros. Its two-storey stage building survives almost completely, making it one of the best preserved Roman theatres; it was restored in the 13th century under the Seljuks.',
+        "q": "Can I attend a performance with a site ticket?",
+        "a": "Do not assume so. Cultural use is described by the tourism portal, but a particular event, ticket, entrance and schedule require current confirmation from its organiser."
       },
       {
-        q: 'What is the capacity of Aspendos Theatre?',
-        a: 'Estimates vary by source, but the usual range is 12,000–20,000 spectators. The lower and upper cavea together form 41 rows of seating.',
+        "q": "Can I visit with reduced mobility?",
+        "a": "Ask the museum for current accessible arrival and viewing arrangements. Historic steps, slopes and photographs do not prove a continuous accessible route."
       },
       {
-        q: 'Is the theatre still used for events?',
-        a: 'Yes. The structure can still host controlled cultural events such as open-air concerts, performances and film screenings. Visiting arrangements can change on event days, so check the programme in advance.',
-      },
-      {
-        q: 'Is Aspendos a UNESCO World Heritage Site?',
-        a: 'The Aspendos Theatre and Aqueducts are on Türkiye’s UNESCO World Heritage Tentative List. That status does not yet mean the property has been definitively inscribed on the World Heritage List.',
-      },
-      {
-        q: 'Is there a contact number for Aspendos Theatre?',
-        a: 'This site is an independent guide and we do not publish a direct telephone line for the archaeological site. For hours, fees and events please use the official contact channels on the Ministry of Culture and Tourism museum page.',
-      },
-      {
-        q: 'How accessible is Aspendos for wheelchairs?',
-        a: 'Access is not uniform across the site because of the ancient stone pavement, sloping paths and seating rows. For the current accessibility arrangements, ask the official museum channel before your visit.',
-      },
-    ],
+        "q": "Where can I confirm details?",
+        "a": "The Ministry museum page lists telephone 0242 892 13 25 and Belkıs, Serik/Antalya. These are attributed official-page details read on 26 October 2026; this guide is not that contact office."
+      }
+    ]
   },
-  footer: {
-    disclaimer:
-      'This site is an independent visitor guide and is not affiliated with the Ministry of Culture and Tourism, the Aspendos Archaeological Site or any official institution. Hours and fees may change, so check official channels before visiting.',
-    locationLabel: 'Location',
-    directions: 'Get directions ↗',
-    links: {
-      map: 'Google Maps location ↗',
-      museum: 'Official museum information ↗',
-      unesco: 'UNESCO Tentative List dossier ↗',
+  "footer": {
+    "disclaimer": "Independent, unofficial, nonprofit tourism and educational guide; not affiliated with the Ministry, the archaeological site or an event operator. Conditions can change: verify admission and services with the responsible provider.",
+    "locationLabel": "Location",
+    "directions": "Get directions ↗",
+    "links": {
+      "map": "Google Maps location ↗",
+      "museum": "Official museum information ↗",
+      "unesco": "UNESCO Tentative List dossier ↗"
     },
-    photoCredit:
-      'All photographs shown on this site remain the property and copyright of their original photographers. Detailed licence information is in the PHOTO-CREDITS.md file.',
+    "photoCredit": "Historical photographs with individual authors, dates and CC BY-SA licences below. Optimized derivatives may be resized/recompressed and visually cropped by the layout."
   },
-  labels: {
-    rating: 'Google rating',
-    duration: 'Suggested time',
-    price: 'Entry fee',
-    hours: 'Opening hours',
-  },
+  "labels": {
+    "rating": "Google rating",
+    "duration": "Suggested time",
+    "price": "Entry fee",
+    "hours": "Opening hours"
+  }
 };

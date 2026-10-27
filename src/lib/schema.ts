@@ -1,4 +1,4 @@
-import { ATTRACTION, DOMAIN, PHOTO_LIST, SITE_NAMES } from '../data/site';
+import { ATTRACTION, DOMAIN, PHOTO_LIST, PHOTOS, SITE_NAMES } from '../data/site';
 import type { Locale } from '../i18n';
 import type { FaqItem } from '../content/types';
 
@@ -21,10 +21,8 @@ export function buildAttractionSchema(
     name: ATTRACTION.name[locale],
     alternateName: ATTRACTION.alternateNames,
     url: absoluteUrl(path, site),
-    image: PHOTO_LIST.map((p) => absoluteUrl(p, site)),
+    image: PHOTO_LIST.filter(p => p !== PHOTOS.aqueduct).map((p) => absoluteUrl(p, site)),
     description,
-    isAccessibleForFree: false,
-    publicAccess: true,
     address: {
       '@type': 'PostalAddress',
       streetAddress: ATTRACTION.streetAddress,
@@ -39,30 +37,8 @@ export function buildAttractionSchema(
       longitude: ATTRACTION.longitude,
     },
     hasMap: ATTRACTION.mapsUrl,
-    sameAs: [ATTRACTION.mapsUrl, ...ATTRACTION.official.map((o) => o.href)],
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-          'Sunday',
-        ],
-        opens: ATTRACTION.opens,
-        closes: ATTRACTION.closes,
-      },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: ATTRACTION.ratingValue,
-      reviewCount: ATTRACTION.reviewCount,
-      bestRating: ATTRACTION.bestRating,
-    },
-    priceRange: ATTRACTION.priceRange,
+    sameAs: [ATTRACTION.mapsUrl],
+    subjectOf: ATTRACTION.official.map(o => ({"@type":"WebPage",url:o.href})),
   };
 }
 

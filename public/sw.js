@@ -1,8 +1,8 @@
 /* Aspendos Antik Tiyatrosu – Service Worker (v1) */
-const CACHE = 'aspendos-theatre-v1';
+const CACHE = 'aspendos-theatre-2026-10-26';
 const PRECACHE = [
   '/',
-  '/404.html',
+  '/en/', '/de/',
   '/manifest.webmanifest',
   '/favicon.svg',
   '/favicon.ico',
@@ -39,13 +39,13 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Sayfa gezinmeleri: ağ öncelikli, çevrimdışıyken önbellekteki ana sayfa.
+  // Sayfa gezinmeleri: ağ öncelikli, çevrimdışıyken aynı sayfanın önbelleği.
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
         .then((response) => {
           const copy = response.clone();
-          caches
+          if (response.ok) caches
             .open(CACHE)
             .then((cache) => cache.put(request, copy))
             .catch(() => {});
@@ -54,7 +54,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() =>
           caches.match(request).then((hit) => {
             if (hit) return hit;
-            return caches.match('/');
+            return new Response('Offline: this page is not cached. / Çevrimdışı: bu sayfa kayıtlı değil. / Offline: diese Seite ist nicht gespeichert.', {status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
           })
         )
     );

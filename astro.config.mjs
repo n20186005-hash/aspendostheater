@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // Resmî alan adı. Buradan site dâhilindeki canonical, Open Graph, hreflang,
 // JSON-LD ve sitemap gibi mutlak URL'ler türetilir.
 // Tek ve kesin sürüm: https://aspendostheater.com (www ve http sürümleri
-// Cloudflare tarafından buraya 301 ile yönlendirilir).
+// Worker girişi bu sürüme yönlendirir).
 const site = 'https://aspendostheater.com';
 
 export default defineConfig({
@@ -18,6 +18,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: page => !/\/(?:en\/|de\/)?404(?:\/|\.html)?$/.test(new URL(page).pathname),
       i18n: {
         defaultLocale: 'tr',
         locales: {

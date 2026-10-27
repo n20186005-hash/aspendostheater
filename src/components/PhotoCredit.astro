@@ -1,0 +1,7 @@
+---
+import { PHOTO_DETAILS } from '../data/site';
+interface Props {src:keyof typeof PHOTO_DETAILS;locale:'tr'|'en'|'de'}
+const {src,locale}=Astro.props;const p=PHOTO_DETAILS[src];
+const label={tr:'Tarihî fotoğraf',en:'Historical photo',de:'Historisches Foto'}[locale];
+---
+<p class="photo-caption px-4 py-3" style="color:inherit;opacity:.75"><span>{label} · {p.date}</span> · <a class="underline" href={p.source}>{p.author}</a> · <a class="underline" href={p.licenceUrl}>{p.licence}</a></p>

@@ -27,6 +27,7 @@ interface Props {
 const { locale, path = '/', title, description, ogTitle, ogDescription, schema } = Astro.props;
 
 const content = getContent(locale);
+const disclosure = {"en": {"title": "Privacy and external resources", "ga": "This site loads Google Analytics when the page opens for navigation statistics. It has no consent settings of its own and does not claim to be tracking-free. Google may receive technical information and use storage as part of its service.", "map": "The embedded map is a separate Google resource. Cloudflare hosting may add a performance beacon independently of Google Analytics; script presence alone does not prove a transmission in your visit.", "cache": "The service worker caches resources and visited pages in this browser for offline use; clear site data in your browser to remove them. We provide no accounts, contact forms, booking or ticket sales. Checked 26 October 2026."}, "tr": {"title": "Gizlilik ve dış kaynaklar", "ga": "Bu site sayfa açıldığında gezinme istatistikleri için Google Analytics yükler. Kendi onay ayarları yoktur; izlemesiz hizmet iddiasında bulunmaz. Google hizmetin işleyişi kapsamında teknik bilgi alabilir ve depolama kullanabilir.", "map": "Gömülü harita ayrı bir Google kaynağıdır. Cloudflare barındırması Google Analytics’ten bağımsız performans beacon’ı ekleyebilir; bir scriptin bulunması o ziyarette veri gönderildiğini tek başına kanıtlamaz.", "cache": "Service worker çevrimdışı kullanım için kaynakları ve ziyaret edilen sayfaları bu tarayıcıda önbelleğe alır; kaldırmak için tarayıcıdaki site verilerini temizleyin. Hesap, iletişim formu, rezervasyon veya bilet satışı sunmuyoruz. Kontrol: 26 Ekim 2026."}, "de": {"title": "Datenschutz und externe Ressourcen", "ga": "Diese Website lädt beim Seitenaufruf Google Analytics für Navigationsstatistiken. Sie hat keine eigene Einwilligungseinstellung und behauptet keine Trackingfreiheit. Google kann technische Informationen erhalten und im Rahmen des Dienstes Speicher verwenden.", "map": "Die eingebettete Karte ist eine getrennte Google-Ressource. Cloudflare-Hosting kann unabhängig von Google Analytics einen Performance-Beacon hinzufügen; ein vorhandenes Script allein beweist keine Übertragung beim Besuch.", "cache": "Der Service Worker speichert Ressourcen und besuchte Seiten im Browser für die Offlinenutzung; zum Entfernen die Website-Daten im Browser löschen. Keine Konten, Kontaktformulare, Buchungen oder Ticketverkäufe. Geprüft: 26. Oktober 2026."}}[locale];
 const site = Astro.site;
 const origin = site ? site.toString().replace(/\/$/, '') : '';
 const canonicalURL = site ? new URL(path, site).toString() : undefined;
@@ -97,8 +98,8 @@ const navItems = [
     </script>
   </head>
   <body>
-    <header class="absolute inset-x-0 top-0 z-30 border-b border-white/15 text-white">
-      <div class="shell flex h-20 items-center justify-between gap-6">
+    <header class="site-header absolute inset-x-0 top-0 z-30 border-b border-white/15 text-white">
+      <div class="header-inner shell flex h-20 items-center justify-between gap-6">
         <a href={homeHref} aria-label={SITE_NAMES[locale]} class="flex items-center gap-3 no-underline">
           <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
             <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
@@ -107,12 +108,12 @@ const navItems = [
           </svg>
           <span><b class="display block text-lg leading-none">{ATTRACTION.name[locale]}</b><span class="mt-1 block text-[10px] font-bold tracking-[.23em]">SERİK · ANTALYA</span></span>
         </a>
-        <nav aria-label={SITE_NAMES[locale]} class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <nav aria-label={SITE_NAMES[locale]} class="hidden items-center gap-7 text-sm font-semibold lg:flex">
           {navItems.map((item) => (
             <a href={item.href} class="no-underline hover:opacity-70">{item.label}</a>
           ))}
         </nav>
-        <nav aria-label="Dil" class="flex items-center gap-2 text-xs font-bold">
+        <nav class="language-switcher flex items-center gap-2 text-xs font-bold" aria-label="Dil">
           {locales.map((code) => (
             <a
               href={localeHref(code, '/')}
@@ -162,6 +163,7 @@ const navItems = [
       <div class="shell mt-8 border-t border-white/10 pt-6 text-[11px] leading-5 text-white/35">
         {content.footer.photoCredit} {origin && <a href={`${origin}/`} class="underline decoration-white/20 underline-offset-4">{SITE_NAMES[locale]}</a>}
       </div>
+      <section class="shell privacy-note" aria-labelledby="privacy-title"><h2 id="privacy-title">{disclosure.title}</h2><p>{disclosure.ga} <a class="underline" href="https://policies.google.com/privacy">Google</a></p><p>{disclosure.map} <a class="underline" href="https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/">Cloudflare</a></p><p>{disclosure.cache}</p></section>
     </footer>
   </body>
 </html>
