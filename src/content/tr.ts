@@ -2,9 +2,9 @@ import type { SiteContent } from './types';
 export const tr: SiteContent = {
   "meta": {
     "title": "Aspendos Antik Tiyatrosu, Serik Antalya: ziyaret bilgileri ve harita",
-    "description": "Belkıs’taki Aspendos Tiyatrosu: Bakanlık ve Maps saat farkı, teyit edilecek bilet koşulları, ulaşım planı, kaynaklı tarih ve geçmiş yılların fotoğrafları.",
+    "description": "Belkıs’taki Aspendos Tiyatrosu: güncel giriş koşullarını ve ulaşımı kontrol edin; kaynaklı tarih ve geçmiş yılların fotoğraflarını keşfedin.",
     "ogTitle": "Aspendos Antik Tiyatrosu, Serik Antalya: ziyaret bilgileri ve harita",
-    "ogDescription": "Belkıs’taki Aspendos Tiyatrosu: Bakanlık ve Maps saat farkı, teyit edilecek bilet koşulları, ulaşım planı, kaynaklı tarih ve geçmiş yılların fotoğrafları."
+    "ogDescription": "Belkıs’taki Aspendos Tiyatrosu: güncel giriş koşullarını ve ulaşımı kontrol edin; kaynaklı tarih ve geçmiş yılların fotoğraflarını keşfedin."
   },
   "nav": {
     "history": "Tarih",
@@ -31,8 +31,8 @@ export const tr: SiteContent = {
   "facts": [
     {
       "label": "Bakanlık sayfası",
-      "title": "08.00–19.00",
-      "body": "26 Ekim 2026’da okundu; gişe 18.30. Sayfada güncelleme tarihi görünmüyor."
+      "title": "Güncel saatleri kontrol edin",
+      "body": "Bakanlık kaydı 25 Kasım 2026 kontrolünde 08.00–17.00, gişe kapanışını 16.30 gösteriyordu. Gitmeden ziyaret tarihinizi doğrulayın."
     },
     {
       "label": "Maps kaydı",
@@ -46,8 +46,8 @@ export const tr: SiteContent = {
     },
     {
       "label": "Giriş",
-      "title": "Tarifeyi teyit edin",
-      "body": "Okunan birincil sayfalarda güncel sayısal ücret doğrulanmadı. Kategori, muafiyet ve ayrı etkinlik biletini sorun."
+      "title": "Resmî tarifeyi kontrol edin",
+      "body": "Turkish Museums kaydı ziyaretçi kategorilerini ve ücretleri yayımlar. Güncel tarifenizi doğrulayın; gösteriler ayrı bilet gerektirebilir."
     }
   ],
   "crumbs": [
@@ -95,18 +95,18 @@ export const tr: SiteContent = {
     "cards": [
       {
         "label": "Bakanlık sayfası",
-        "title": "08.00–19.00",
-        "body": "26 Ekim’de okunan müze kaydı; görünür güncelleme tarihi yok."
+        "title": "Güncel saatleri kontrol edin",
+        "body": "Bakanlık kaydı 25 Kasım 2026 kontrolünde 08.00–17.00, gişe kapanışını 16.30 gösteriyordu. Gitmeden ziyaret tarihinizi doğrulayın."
       },
       {
         "label": "Gişe",
-        "title": "18.30",
-        "body": "Aynı sayfadaki gişe kapanış saati. Son kabul ve o günün kısıtlarını ayrıca doğrulayın."
+        "title": "16:30",
+        "body": "Bakanlık kaydı 25 Kasım 2026 kontrolünde 08.00–17.00, gişe kapanışını 16.30 gösteriyordu. Gitmeden ziyaret tarihinizi doğrulayın."
       },
       {
         "label": "Ücret",
-        "title": "Doğrudan sorun",
-        "body": "Güncel sayısal tarife doğrulanmadı. Eski bir ücret listesi veya tur satışı herkese geçerli bugünkü ücret sayılmaz."
+        "title": "Resmî tarifeyi kontrol edin",
+        "body": "Turkish Museums kaydı ziyaretçi kategorilerini ve ücretleri yayımlar. Güncel tarifenizi doğrulayın; gösteriler ayrı bilet gerektirebilir."
       },
       {
         "label": "Plan",
@@ -115,7 +115,7 @@ export const tr: SiteContent = {
       }
     ],
     "noteLabel": "Not:",
-    "noteBody": "26 Ekim 2026 kontrolü: Bakanlık müze sayfasında 08.00–19.00, gişe kapanışı 18.30; Maps’te her gün 08.00–22.00 yazıyor. Bunlar etkinlik bileti veya geç giriş garantisi değildir. Yola çıkmadan müzeden güncel kabul koşullarını öğrenin."
+    "noteBody": "Bakanlık kaydı 25 Kasım 2026 kontrolünde 08.00–17.00, gişe kapanışını 16.30 gösteriyordu. Gitmeden ziyaret tarihinizi doğrulayın."
   },
   "route": {
     "eyebrow": "Yürüyüş rotası",
@@ -189,7 +189,7 @@ export const tr: SiteContent = {
     "parking": {
       "label": "Otopark",
       "title": "Otopark ve indirme koşullarını kontrol edin.",
-      "body": "Bu rehber güncel, özel ziyaretçi otoparkı düzenini doğrulamamıştır. Yasal indirme noktası, erişilebilir geliş ve ücretleri müzeye sorun; kapıda yer varsaymayın."
+      "body": "Resmî Turkish Museums kaydı otopark ve tuvalet gösteriyor. Kullanılabilirlik, ücret ve erişilebilir düzenlemeleri örenyerine sorun."
     },
     "bestTime": {
       "label": "En iyi zaman",
@@ -270,7 +270,7 @@ export const tr: SiteContent = {
       {
         "name": "Resmî Müze sayfası – Aspendos Örenyeri",
         "href": "https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP",
-        "note": "26 Ekim 2026’da okunan müze kaydı: ziyaret/gişe saati, adres, MüzeKart notu; sayısal güncel ücret doğrulanmadı."
+        "note": "Bakanlık kaydı 25 Kasım 2026 tarihinde kontrol edildi. Saatler ve giriş koşulları değişebilir; tarihiniz için resmî kayıtları kontrol edin."
       },
       {
         "name": "UNESCO Dünya Mirası Geçici Listesi – Aspendos",
@@ -285,11 +285,16 @@ export const tr: SiteContent = {
       {
         "name": "Google Maps — Aspendos Theatre",
         "href": "https://maps.app.goo.gl/DSrGmEky8GKnY3pK8",
-        "note": "Tarih atfedilmiş üçüncü taraf konum, puan ve çelişen 08.00–22.00 kaydı; işletmeci politikası değildir."
+        "note": "26 Ekim 2026 tarihli üçüncü taraf konum, puan ve saat kaydı; işletmeci politikası değildir."
+      },
+      {
+        "name": "Resmî Turkish Museums kaydı",
+        "href": "https://turkishmuseums.kprod.kultur.gov.tr/museum/detail/1963-antalya-the-archaeological-site-of-aspendos/1963/4",
+        "note": "Resmî kayıt: ziyaretçi kategorileri, ücretler, otopark ve tuvalet. Güncel koşulları doğrulayın."
       }
     ],
     "freshnessLabel": "Güncellik:",
-    "freshnessBody": "26 Ekim 2026’da kontrol edildi. Bakanlık ve Maps saatleri farklı; müze sayfasında güncelleme tarihi yok ve güncel sayısal ücret doğrulanmadı. Çıkmadan teyit edin.",
+    "freshnessBody": "Bakanlık kaydı 25 Kasım 2026 tarihinde kontrol edildi. Saatler ve giriş koşulları değişebilir; tarihiniz için resmî kayıtları kontrol edin.",
     "creditLabel": "Fotoğraf telifleri:",
     "creditBody": "Geçmiş yıllara ait fotoğrafların yazar, tarih ve CC BY-SA lisansları aşağıda ayrı ayrı verilir. Web türevleri boyutlandırılmış/sıkıştırılmış olabilir; tasarım görsel kırpma uygulayabilir.",
     "cta": "Kaynağı aç ↗"
@@ -304,11 +309,11 @@ export const tr: SiteContent = {
       },
       {
         "q": "Hangi ziyaret saati geçerli?",
-        "a": "26 Ekim 2026’da okunan Bakanlık sayfası 08.00–19.00 ve gişe 18.30 yazıyor; güncelleme tarihi yok. Maps her gün 08.00–22.00 gösteriyordu. Bu fark nedeniyle geç giriş varsaymadan müzeden güncel kabulü teyit edin."
+        "a": "Bakanlık kaydı 25 Kasım 2026 kontrolünde 08.00–17.00, gişe kapanışını 16.30 gösteriyordu. Gitmeden ziyaret tarihinizi doğrulayın."
       },
       {
         "q": "Güncel bilet ücreti nedir?",
-        "a": "Okunan birincil ürün sayfalarında sayısal tarife doğrulanmadı. Geçerli kategori, muafiyet ve koşulları müzeye sorun. Tur, gece ziyareti ve gösteri biletleri ayrı olabilir."
+        "a": "Turkish Museums kaydı ziyaretçi kategorilerini ve ücretleri yayımlar. Güncel tarifenizi doğrulayın; gösteriler ayrı bilet gerektirebilir."
       },
       {
         "q": "MüzeKart geçerli mi?",
@@ -324,7 +329,7 @@ export const tr: SiteContent = {
       },
       {
         "q": "Otopark kesin mi?",
-        "a": "Bu rehber güncel özel ziyaretçi otoparkı düzenini doğrulamadı. Yer varsaymadan yasal indirme, erişilebilir geliş, ücret ve kısıtları sorun."
+        "a": "Resmî Turkish Museums kaydı otopark ve tuvalet gösteriyor. Kullanılabilirlik, ücret ve erişilebilir düzenlemeleri örenyerine sorun."
       },
       {
         "q": "Tiyatronun kapasitesi nedir?",

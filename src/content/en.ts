@@ -2,9 +2,9 @@ import type { SiteContent } from './types';
 export const en: SiteContent = {
   "meta": {
     "title": "Aspendos Theatre, Serik Antalya: history, hours to check and map",
-    "description": "Visit Aspendos Roman Theatre in Belkıs, Serik: museum and Maps hours differ. Check admission, travel and event arrangements; see sourced history and historic photos.",
+    "description": "Visit Aspendos Roman Theatre in Belkıs, Serik: check admission, travel and event arrangements; explore sourced history and historic photos.",
     "ogTitle": "Aspendos Theatre, Serik Antalya: history, hours to check and map",
-    "ogDescription": "Visit Aspendos Roman Theatre in Belkıs, Serik: museum and Maps hours differ. Check admission, travel and event arrangements; see sourced history and historic photos."
+    "ogDescription": "Visit Aspendos Roman Theatre in Belkıs, Serik: check admission, travel and event arrangements; explore sourced history and historic photos."
   },
   "nav": {
     "history": "History",
@@ -31,8 +31,8 @@ export const en: SiteContent = {
   "facts": [
     {
       "label": "Museum page",
-      "title": "08:00–19:00",
-      "body": "Read 26 October 2026; ticket counter 18:30. The page shows no update date."
+      "title": "Check current hours",
+      "body": "The Ministry listing showed 08:00–17:00 and ticket-office closing at 16:30 when checked on 25 November 2026. Verify your date before travelling."
     },
     {
       "label": "Maps listing",
@@ -46,8 +46,8 @@ export const en: SiteContent = {
     },
     {
       "label": "Admission",
-      "title": "Confirm the tariff",
-      "body": "No current numeric fee verified in the primary pages read. Check eligibility, exemptions and any separate event ticket."
+      "title": "Check the official tariff",
+      "body": "The official Turkish Museums listing publishes visitor categories and prices. Check your current rate; performances may require a separate ticket."
     }
   ],
   "crumbs": [
@@ -95,18 +95,18 @@ export const en: SiteContent = {
     "cards": [
       {
         "label": "Museum page",
-        "title": "08:00–19:00",
-        "body": "The Ministry listing read on 26 October gives these visiting hours; it has no visible update date."
+        "title": "Check current hours",
+        "body": "The Ministry listing showed 08:00–17:00 and ticket-office closing at 16:30 when checked on 25 November 2026. Verify your date before travelling."
       },
       {
         "label": "Ticket counter",
-        "title": "18:30",
-        "body": "The same page lists this counter closing time. Confirm last admission and restrictions for your date."
+        "title": "16:30",
+        "body": "The Ministry listing showed 08:00–17:00 and ticket-office closing at 16:30 when checked on 25 November 2026. Verify your date before travelling."
       },
       {
         "label": "Fee",
-        "title": "Check directly",
-        "body": "No current numeric price has been verified. Do not treat an old rate or a tour offer as a current universal tariff."
+        "title": "Check the official tariff",
+        "body": "The official Turkish Museums listing publishes visitor categories and prices. Check your current rate; performances may require a separate ticket."
       },
       {
         "label": "Planning",
@@ -115,7 +115,7 @@ export const en: SiteContent = {
       }
     ],
     "noteLabel": "Note:",
-    "noteBody": "Checked 26 October 2026: the Ministry museum page lists 08:00–19:00, ticket counter until 18:30; Maps lists 08:00–22:00 daily. Neither establishes an event ticket or guaranteed late admission. Confirm with the museum before travelling."
+    "noteBody": "The Ministry listing showed 08:00–17:00 and ticket-office closing at 16:30 when checked on 25 November 2026. Verify your date before travelling."
   },
   "route": {
     "eyebrow": "Walking route",
@@ -189,7 +189,7 @@ export const en: SiteContent = {
     "parking": {
       "label": "Parking",
       "title": "Check parking and drop-off arrangements.",
-      "body": "No current dedicated parking arrangement has been confirmed by this guide. Ask the museum about lawful drop-off, accessible arrival and any fees; do not assume a space at the entrance."
+      "body": "The official Turkish Museums listing shows car parking and restrooms. Confirm current availability, charges and accessible arrangements with the site."
     },
     "bestTime": {
       "label": "Best time",
@@ -270,7 +270,7 @@ export const en: SiteContent = {
       {
         "name": "Official museum page – Aspendos Archaeological Site",
         "href": "https://muze.gov.tr/muze-detay?SectionId=ASP01&DistId=ASP",
-        "note": "Museum listing read 26 October 2026: visiting and counter hours, address and MüzeKart note; no numeric tariff verified."
+        "note": "The Ministry listing was checked on 25 November 2026. Hours and admission conditions can change; check the official listings for your date."
       },
       {
         "name": "UNESCO World Heritage Tentative List – Aspendos",
@@ -285,11 +285,16 @@ export const en: SiteContent = {
       {
         "name": "Google Maps — Aspendos Theatre",
         "href": "https://maps.app.goo.gl/DSrGmEky8GKnY3pK8",
-        "note": "Dated third-party place point, rating and conflicting 08:00–22:00 listing; not operator policy."
+        "note": "Dated third-party place point, rating and hours snapshot from 26 October 2026; not operator policy."
+      },
+      {
+        "name": "Official Turkish Museums listing",
+        "href": "https://turkishmuseums.kprod.kultur.gov.tr/museum/detail/1963-antalya-the-archaeological-site-of-aspendos/1963/4",
+        "note": "Official site listing: visitor categories, tariffs, parking and restrooms. Confirm current conditions."
       }
     ],
     "freshnessLabel": "Freshness:",
-    "freshnessBody": "Checked 26 October 2026. Museum and Maps hours differ; the museum page has no visible update date and no current price was verified. Confirm before travelling.",
+    "freshnessBody": "The Ministry listing was checked on 25 November 2026. Hours and admission conditions can change; check the official listings for your date.",
     "creditLabel": "Photo credits:",
     "creditBody": "Historical photographs with individual authors, dates and CC BY-SA licences below. Optimized derivatives may be resized/recompressed and visually cropped by the layout.",
     "cta": "Open source ↗"
@@ -304,11 +309,11 @@ export const en: SiteContent = {
       },
       {
         "q": "Which opening hours should I use?",
-        "a": "The Ministry page read on 26 October 2026 lists 08:00–19:00 and ticket counter 18:30, without an update date. Maps listed 08:00–22:00 daily. These conflict; confirm current admission with the museum rather than assuming late entry."
+        "a": "The Ministry listing showed 08:00–17:00 and ticket-office closing at 16:30 when checked on 25 November 2026. Verify your date before travelling."
       },
       {
         "q": "What is the current entry fee?",
-        "a": "No current numeric tariff was verified in the primary product pages read. Check the museum’s applicable rate, eligibility and exemptions. Tour transport, night visits and performance tickets may have separate conditions."
+        "a": "The official Turkish Museums listing publishes visitor categories and prices. Check your current rate; performances may require a separate ticket."
       },
       {
         "q": "Is MüzeKart valid?",
@@ -324,7 +329,7 @@ export const en: SiteContent = {
       },
       {
         "q": "Is parking confirmed?",
-        "a": "This guide has not confirmed current dedicated visitor parking. Ask about lawful drop-off, accessible arrival, charges and restrictions before relying on a space."
+        "a": "The official Turkish Museums listing shows car parking and restrooms. Confirm current availability, charges and accessible arrangements with the site."
       },
       {
         "q": "How many spectators could it hold?",
